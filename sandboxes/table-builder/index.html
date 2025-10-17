@@ -1,0 +1,1230 @@
+<!doctype html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Table Generator</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.x/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="./default-skin.css"
+            rel="stylesheet"
+        />
+        <style>
+            container > .list-group {width: 100%; margin: 0}
+            .tablebuilder .container {width: 90%; max-width: 90%}
+            .tablebuilder table.mainbg tr {background: #F3F3F3}
+            .tablebuilder table.mainbg tr:nth-child(2n) {background: #F9F9F9}
+            .tablebuilder .mback a {color: #FFF !important}
+            .tablebuilder .mback a:hover {opacity: .8}
+            .tablebuilder .mtitle {text-align: left; font-weight: bold; padding: 5px 10px; font-size: 13pt; font-weight: normal; color: #FFF; background: transparent !important}
+            .tablebuilder .mback {background-color: #58A72E; border-bottom: 3px solid #50972A; line-height: 30px; border-radius: 2px 2px 0 0}
+            .tablebuilder .skin_tbl {width: 100%; border-bottom: 4px solid #E27F14; background: #F9F9F9; margin-bottom: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, .1); border-radius: 2px}
+            .tablebuilder container {max-width: 100%; width: 100%; margin: 0; padding: 0}
+            .tablebuilder .custom-page > li {margin: 0; padding: 0; box-shadow: none}
+            .tablebuilder #ffbtablegenerator_start {text-align:center}
+            .tablebuilder .header, nav, .tablebuilder .notification, .buttons, .tablebuilder .custom-page > .title, footer, .tablebuilder .custom-page > li > br, .tablebuilder .mback_left, .tablebuilder .mback_right, .tablebuilder .mleft_top, .tablebuilder .mleft, .tablebuilder .mleft_bottom, .tablebuilder .mright_top, .tablebuilder .mright, .tablebuilder .mright_bottom, .tablebuilder .msub, .tablebuilder .nav, .tablebuilder .tabs, .tablebuilder .ffbcredits, .tablebuilder .ffb_menu, .tablebuilder .ffb_header, .tablebuilder .ffb_tbl, .tablebuilder #chat_main, .tablebuilder #chat_show, .tablebuilder .menuwrap, .tablebuilder #sidebutton {display:none !important}
+            .textinput {font-size: 15px}
+
+            #ffbtablegenerator_main {position: relative; background: #FFFFFF; border-radius: 5px; padding: 30px; box-sizing: border-box; box-shadow: 0 3px 10px rgba(0, 0, 0, .06); color: #9D9D9D}
+
+            .ffbtablegenerator_sunbar {padding-left: 2%; padding-right: 2%; border-color: #58A72E; color: #58A72E; position: relative; z-index: 1; border-left: 5px solid; padding: 5px 0 5px 15px; font-size: 14px; font-weight: 600; text-transform: uppercase; text-align: left !important; left: -30px}
+            #ffbtablegenerator_editor > div:first-child {width: 50%; float: left; text-align:left}
+            #ffbtablegenerator_editor > div:last-child {width: 50%; float: right; text-align:right}
+            #ffbtablegenerator_editor > div:last-child .ffbtablegenerator_sunbar {right: -30px; left: auto; text-align: right !important; padding: 5px 15px 5px 0; border-right: 5px solid; border-left: 0}
+
+            #ffbtablegenerator {clear:both; padding-top: 40px}
+
+            #ffbtablegenerator_main button {font-weight: bold; background-color: #8BC34A; color: #FFF; padding: 3px 7px; margin-right: 5px; font: 15px verdana, arial, serif; border: none; border-radius: 3px; margin-top: 2px}
+            #ffbtablegenerator_start > button:last-child {margin-left: 5px; margin-right: 0}
+            #ffbtablegenerator::before {content: 'Anteprima interattiva:'; margin-bottom: 10px; display: block}
+            #ffbtablegenerator::after {content: 'Codice generato(sola lettura):'; margin-top: 30px; display: block; margin-bottom: 10px}
+            #ffbtablegenerator_code {margin-top: 0 !important}
+            #ffbtablegenerator_start > button {display: block; margin: 10px auto !important}
+            .title.top {background: rgba(0, 0, 0, 0.1); border-radius: 0; padding: 0; text-align:center}
+            #tbl_form1 br+br {display:none}
+            #colorgen_p, #colorgen {width: 100%; box-sizing: border-box; margin: 0}
+            .color_input {margin: 0; padding: 2px}
+            #colorgen_p {display:none}
+            #colorgen_p::before {content: 'Codice colore generato:'; margin-top: 30px; display: block; margin-bottom: 10px}</style>
+    </head>
+    <body>
+        <script>
+            var commands = {
+                bold: {
+                    cmd: 'bold',
+                    icon: 'bold',
+                },
+                strikeThrough: {
+                    cmd: 'strikeThrough',
+                },
+                subscript: {
+                    cmd: 'subscript',
+                },
+                underline: {
+                    cmd: 'underline',
+                },
+                italic: {
+                    cmd: 'italic',
+                },
+                backColor: {
+                    cmd: 'backColor',
+                    val: '#FFD700',
+                },
+                fontName: {
+                    cmd: 'fontName',
+                    val: 'Arial',
+                },
+                fontSize: {
+                    cmd: 'fontSize',
+                    val: '14',
+                },
+                foreColor: {
+                    cmd: 'foreColor',
+                    val: '#FF0000',
+                },
+                insertHorizontalRule: {
+                    cmd: 'insertHorizontalRule',
+                },
+                insertHTML: {
+                    cmd: 'insertHTML',
+                    val: '<h3>H3</h3>',
+                },
+                insertImage: {
+                    cmd: 'insertImage',
+                    val: 'http://dummyimage.com/160x90',
+                },
+                insertOrderedList: {
+                    cmd: 'insertOrderedList',
+                },
+                insertUnorderedList: {
+                    cmd: 'insertUnorderedList',
+                },
+                insertParagraph: {
+                    cmd: 'insertParagraph',
+                },
+                justifyCenter: {
+                    cmd: 'justifyCenter',
+                },
+                justifyFull: {
+                    cmd: 'justifyFull',
+                },
+                justifyLeft: {
+                    cmd: 'justifyLeft',
+                },
+                justifyRight: {
+                    cmd: 'justifyRight',
+                },
+                indent: {
+                    cmd: 'indent',
+                },
+                outdent: {
+                    cmd: 'outdent',
+                },
+                createLink: {
+                    cmd: 'createLink',
+                    val: 'http://ffboard.forumfree.it/',
+                },
+                unlink: {
+                    cmd: 'unlink',
+                },
+                removeFormat: {
+                    cmd: 'removeFormat',
+                },
+            };
+
+            var firstTableHTML =
+                '<table class="skin_tbl" align="center" cellpadding="0" cellspacing="0"><tr><td class="mleft_top"></td><td><table class="mback" width="100%" cellpadding="0" cellspacing="0"><tr><td class="mback_left"></td><td class="mback_center"> <div class="mtitle">TITOLO</div> </td><td class="mback_right"></td></tr></table></td><td class="mright_top"></td></tr><tr><td class="mleft"></td><td><table class="mainbg" style="text-align:center;width:100%" cellpadding="4" cellspacing="1"> <tr><td class="ww">COLONNA1</td></tr> </table></td><td class="mright"></td></tr><tr><td class="mleft_bottom"></td><td><table class="msub" width="100%" cellpadding="0" cellspacing="0"><tr><td class="msub_left"></td><td class="msub_center">&nbsp;</td><td class="msub_right"></td></tr></table></td><td class="mright_bottom"></td></tr></table>';
+
+            window.isColorInputSupported = (function () {
+                var colorInput = document.createElement('input');
+                colorInput.type = 'color';
+                colorInput.value = '!';
+                return colorInput.type === 'color' && colorInput.value !== '!';
+            })();
+
+            function removeAllOnClick() {
+                var els = document
+                    .querySelector('#ffbtablegenerator')
+                    .querySelectorAll('.mainbg tbody td');
+                for (var i = 0; i < els.length; i++) {
+                    els[i].removeAttribute('onclick');
+                }
+            }
+
+            function changeColor(v) {
+                document.querySelector('#colorgen').value = v;
+                document.querySelector('#colorgen_p').style.display = 'block';
+            }
+
+            function makeEditable() {
+                var els = document.querySelectorAll(
+                    '#ffbtablegenerator .mainbg tbody td',
+                );
+                for (var i = 0; i < els.length; i++) {
+                    els[i].setAttribute('spellcheck', 'false');
+                    els[i].setAttribute('contenteditable', 'true');
+                }
+                if (
+                    document.querySelector(
+                        '#ffbtablegenerator .mback .mback_center .mtitle',
+                    ) !== null
+                ) {
+                    document
+                        .querySelector(
+                            '#ffbtablegenerator .mback .mback_center .mtitle',
+                        )
+                        .setAttribute('spellcheck', 'false');
+                    document
+                        .querySelector(
+                            '#ffbtablegenerator .mback .mback_center .mtitle',
+                        )
+                        .setAttribute('contenteditable', 'true');
+                }
+            }
+
+            function taketableHTML() {
+                var div = document.createElement('div');
+                div.innerHTML =
+                    document.querySelector('#ffbtablegenerator').innerHTML;
+                var divb = div.querySelector('table');
+                var els = divb.querySelectorAll('.mainbg tbody td');
+                for (var i = 0; i < els.length; i++) {
+                    els[i].removeAttribute('spellcheck');
+                    els[i].removeAttribute('contenteditable');
+                    els[i].removeAttribute('onclick');
+                    if (els[i].style.display == 'none') {
+                        els[i].innerHTML = '';
+                    }
+                }
+
+                // Replace jQuery CSS operations with native JS
+                var emptyStyleEls = divb.querySelectorAll(
+                    '.mainbg tbody td[style=""]',
+                );
+                for (var i = 0; i < emptyStyleEls.length; i++) {
+                    emptyStyleEls[i].removeAttribute('style');
+                }
+
+                // Replace font tags with span tags
+                var fontTags = div.querySelectorAll('font');
+                for (var i = 0; i < fontTags.length; i++) {
+                    var span = document.createElement('span');
+                    span.innerHTML = fontTags[i].innerHTML;
+                    span.style.color = fontTags[i].getAttribute('color');
+                    fontTags[i].parentNode.replaceChild(span, fontTags[i]);
+                }
+
+                // Replace div align with span style
+                var alignDivs = div.querySelectorAll('div[align]');
+                for (var i = 0; i < alignDivs.length; i++) {
+                    var span = document.createElement('span');
+                    span.innerHTML = alignDivs[i].innerHTML;
+                    span.style.textAlign = alignDivs[i].getAttribute('align');
+                    alignDivs[i].parentNode.replaceChild(span, alignDivs[i]);
+                }
+
+                // Set spans with text-align to block with 100% width
+                var textAlignSpans = div.querySelectorAll(
+                    'span[style*="text-align"]',
+                );
+                for (var i = 0; i < textAlignSpans.length; i++) {
+                    textAlignSpans[i].style.display = 'block';
+                    textAlignSpans[i].style.width = '100%';
+                }
+
+                var mhtml = div.querySelector('.mtitle').innerHTML;
+
+                return (
+                    '<table class="skin_tbl" align="center" cellpadding="0" cellspacing="0"><tr><td class="mleft_top"></td><td><table class="mback" width="100%" cellpadding="0" cellspacing="0"><tr><td class="mback_left"></td><td class="mback_center">\n\n' +
+                    '<div class="mtitle">' +
+                    div.querySelector('.mtitle').innerHTML +
+                    '</div>\n\n' +
+                    '</td><td class="mback_right"></td></tr></table></td><td class="mright_top"></td></tr><tr><td class="mleft"></td><td><table class="mainbg" style="text-align:center;width:100%" cellpadding="4" cellspacing="1"><tbody>\n\n' +
+                    div
+                        .querySelector('tr > td > table.mainbg > tbody')
+                        .innerHTML.split('</tr> <tr>')
+                        .join('</tr>\n<tr>')
+                        .split('</tr><tr>')
+                        .join('</tr>\n<tr>')
+                        .split('</tr>')
+                        .join('\n</tr>')
+                        .split('<tr>')
+                        .join('<tr>\n\t')
+                        .split('</td><td')
+                        .join('</td>\n\t<td') +
+                    '\n\n' +
+                    '</tbody></table></td><td class="mright"></td></tr><tr><td class="mleft_bottom"></td><td><table class="msub" width="100%" cellpadding="0" cellspacing="0"><tr><td class="msub_left"></td><td class="msub_center">&nbsp;</td><td class="msub_right"></td></tr></table></td><td class="mright_bottom"></td></tr></table><br><br>'
+                );
+            }
+
+            function cod_tab(form) {
+                cost_a =
+                    '<table class="skin_tbl" align="center" cellpadding="0" cellspacing="0"><tr><td class="mleft_top"><\/td><td><table class="mback" width="100%" cellpadding="0" cellspacing="0"><tr><td class="mback_left"><\/td><td class="mback_center">\n\n<div class="mtitle">TITOLO<\/div>\n\n<\/td><td class="mback_right"><\/td><\/tr><\/table><\/td><td class="mright_top"><\/td><\/tr><tr><td class="mleft"><\/td><td><table class="mainbg" style="text-align:' +
+                    form.align.value +
+                    ';width:100%" cellpadding="4" cellspacing="1">';
+                var_a = '\n\n';
+                if (form.tile_sub_c.value != 0) {
+                    var_a = var_a + '<tr>\n';
+                    if (form.tile_sub_c.value == 1)
+                        var_a =
+                            var_a +
+                            '<td class="title top" colspan="' +
+                            form.colonne.value +
+                            '">SOTTOTITOLO<\/td>\n';
+                    else {
+                        form.tile_sub_c.value = form.colonne.value;
+                        for (t = 1; t <= form.colonne.value; t++) {
+                            var_a =
+                                var_a +
+                                '<td class="title top">SOTTOTITOLO COLONNA ' +
+                                t +
+                                '<\/td>\n';
+                        }
+                    }
+                    var_a = var_a + '<\/tr>\n\n';
+                }
+                matrice = new Array(form.righe.value, form.colonne.value);
+                for (i = 1; i <= form.righe.value; i++) {
+                    var_a = var_a + '<tr><!--RIGA' + i + '-->';
+                    for (j = 1; j <= form.colonne.value; j++) {
+                        k = j;
+                        while (k > 2) {
+                            k = k - 2;
+                        }
+                        if (k == 1) value = 'ww';
+                        else value = 'aa';
+                        var_a =
+                            var_a +
+                            '\n<td class="' +
+                            value +
+                            '">COLONNA' +
+                            j +
+                            '<\/td>';
+                    }
+                    var_a = var_a + '\n<\/tr>\n\n';
+                }
+                form.codice.value = cost_a + var_a + cost_b;
+            }
+            cost_b =
+                '<\/table><\/td><td class="mright"><\/td><\/tr><tr><td class="mleft_bottom"><\/td><td><table class="msub" width="100%" cellpadding="0" cellspacing="0"><tr><td class="msub_left"><\/td><td class="msub_center">&nbsp;<\/td><td class="msub_right"><\/td><\/tr><\/table><\/td><td class="mright_bottom"><\/td><\/tr><\/table><br><br>';
+
+            function generateRow() {
+                var next = '',
+                    returned = '<tr>';
+                for (
+                    var i = 0;
+                    i <
+                    document.querySelectorAll(
+                        '#ffbtablegenerator .mainbg > tbody > tr:first-child > td',
+                    ).length;
+                    i++
+                ) {
+                    next = next == '' ? 'ww' : next == 'ww' ? 'aa' : 'ww';
+                    returned =
+                        returned +
+                        '<td class="' +
+                        next +
+                        '">COLONNA' +
+                        (i + 1) +
+                        '</td>';
+                }
+                return returned + '</tr>';
+            }
+
+            function generateColumn() {
+                return (
+                    '<td class="' +
+                    (document.querySelectorAll(
+                        '#ffbtablegenerator .mainbg > tbody > tr:first-child > td',
+                    ).length %
+                        2 ==
+                    1
+                        ? 'aa'
+                        : 'ww') +
+                    '">COLONNA' +
+                    (document.querySelectorAll(
+                        '#ffbtablegenerator .mainbg > tbody > tr:first-child > td',
+                    ).length +
+                        1) +
+                    '</td>'
+                );
+            }
+
+            function addRow() {
+                document
+                    .querySelector('#ffbtablegenerator .mainbg tbody')
+                    .insertAdjacentHTML('beforeend', generateRow());
+                removeAllOnClick();
+                makeEditable();
+            }
+
+            function addColumn() {
+                var generated = generateColumn();
+                for (
+                    var i = 0;
+                    i <
+                    document.querySelectorAll(
+                        '#ffbtablegenerator .mainbg > tbody > tr',
+                    ).length;
+                    i++
+                ) {
+                    document
+                        .querySelectorAll(
+                            '#ffbtablegenerator .mainbg > tbody > tr',
+                        )
+                        [i].insertAdjacentHTML('beforeend', generated);
+                }
+                removeAllOnClick();
+                makeEditable();
+            }
+
+            function removeRow() {
+                removeAllOnClick();
+                var n = prompt('Inserisci il numero della riga da rimuovere:');
+                if (n) {
+                    n = Number(n);
+                    if (isNaN(n) || n < 1) {
+                        return alert('Devi inserire un numero valido!');
+                    }
+                    n = n - 1;
+                    if (
+                        document.querySelectorAll(
+                            '#ffbtablegenerator .mainbg > tbody > tr',
+                        )[n] == null
+                    ) {
+                        return alert('Questa riga non esiste!');
+                    }
+                    if (
+                        document.querySelectorAll(
+                            '#ffbtablegenerator .mainbg > tbody > tr',
+                        ).length === 1
+                    ) {
+                        return alert("Non puoi rimuovere l'ultima riga!");
+                    }
+
+                    document
+                        .querySelectorAll('#ffbtablegenerator .mainbg tbody tr')
+                        [n].remove();
+                }
+            }
+
+            function removeColumn() {
+                removeAllOnClick();
+                var n = prompt(
+                    'Inserisci il numero della colonna da rimuovere:',
+                );
+                if (n) {
+                    n = Number(n);
+                    if (isNaN(n) || n < 1) {
+                        return alert('Devi inserire un numero valido!');
+                    }
+                    n = n - 1;
+                    if (
+                        document.querySelectorAll(
+                            '#ffbtablegenerator .mainbg > tbody > tr:first-child > td',
+                        )[n] == null
+                    ) {
+                        return alert('Questa colonna non esiste!');
+                    }
+                    if (
+                        document.querySelectorAll(
+                            '#ffbtablegenerator .mainbg > tbody > tr:first-child > td',
+                        ).length === 1
+                    ) {
+                        return alert("Non puoi rimuovere l'ultima colonna!");
+                    }
+
+                    for (
+                        var i = 0;
+                        i <
+                        document.querySelectorAll(
+                            '#ffbtablegenerator .mainbg > tbody > tr',
+                        ).length;
+                        i++
+                    ) {
+                        document
+                            .querySelectorAll(
+                                '#ffbtablegenerator .mainbg > tbody > tr',
+                            )
+                            [i].querySelectorAll('td')
+                            [n].remove();
+                    }
+                }
+            }
+
+            function getSelectionHtml() {
+                var html = '';
+                if (typeof window.getSelection != 'undefined') {
+                    var sel = window.getSelection();
+                    if (sel.rangeCount) {
+                        var container = document.createElement('div');
+                        for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+                            container.appendChild(
+                                sel.getRangeAt(i).cloneContents(),
+                            );
+                        }
+                        html = container.innerHTML;
+                    }
+                } else if (typeof document.selection != 'undefined') {
+                    if (document.selection.type == 'Text') {
+                        html = document.selection.createRange().htmlText;
+                    }
+                }
+                return html;
+            }
+
+            function cellFormat() {
+                removeAllOnClick();
+                if (!document.activeElement.hasAttribute('contenteditable')) {
+                    alert(
+                        'Devi selezionare un elemento nella tabella per poter eseguire questa azione!',
+                    );
+                } else {
+                    document.activeElement.innerHTML = '';
+                }
+            }
+
+            function addRowSpan(el) {
+                var tinx = Array.from(el.parentNode.children).indexOf(el);
+                var nextEl = el.parentNode.nextElementSibling;
+
+                if (nextEl === null) {
+                    alert('Nessuna cella sottostante da unire!');
+                } else {
+                    while (
+                        nextEl !== null &&
+                        typeof nextEl.querySelectorAll('td')[tinx] !==
+                            'undefined' &&
+                        nextEl.querySelectorAll('td')[tinx].style.display ===
+                            'none'
+                    ) {
+                        nextEl = nextEl.nextElementSibling;
+                    }
+                }
+
+                if (
+                    nextEl !== null &&
+                    nextEl.querySelector('td') &&
+                    typeof nextEl.querySelectorAll('td')[tinx] !== 'undefined'
+                ) {
+                    el.setAttribute(
+                        'rowspan',
+                        el.getAttribute('rowspan') !== null
+                            ? (
+                                  Number(el.getAttribute('rowspan')) + 1
+                              ).toString()
+                            : '2',
+                    );
+                    nextEl.querySelectorAll('td')[tinx].style.display = 'none';
+                    if (
+                        el.getAttribute('colspan') !== null &&
+                        Number(el.getAttribute('colspan')) > 1
+                    ) {
+                        var cspan = Number(el.getAttribute('colspan')) - 1;
+                        var spanned = nextEl.querySelectorAll('td')[tinx];
+                        while (cspan > 0) {
+                            spanned = spanned.nextElementSibling;
+                            spanned.style.display = 'none';
+                            cspan--;
+                        }
+                    }
+                } else {
+                    alert('Nessuna cella sottostante da unire!');
+                }
+                removeAllOnClick();
+            }
+
+            function setRowSpan() {
+                if (
+                    confirm(
+                        'Passare alla modalità di unione verticale (unione in verticale di una cella con quella sottostante)?',
+                    )
+                ) {
+                    var els = document
+                        .querySelector('#ffbtablegenerator')
+                        .querySelectorAll('.mainbg tbody td');
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].setAttribute('onclick', 'addRowSpan(this)');
+                    }
+                }
+            }
+
+            function delRowSpan(el) {
+                if (
+                    el.getAttribute('rowspan') !== null &&
+                    Number(el.getAttribute('rowspan')) > 1
+                ) {
+                    var tinx = Array.from(el.parentNode.children).indexOf(el);
+                    var nextEl = el.parentNode;
+                    var rspan = Number(el.getAttribute('rowspan')) - 1;
+                    while (rspan > 0) {
+                        nextEl = nextEl.nextElementSibling;
+                        rspan--;
+                    }
+                    el.setAttribute(
+                        'rowspan',
+                        (Number(el.getAttribute('rowspan')) - 1).toString(),
+                    );
+                    nextEl.querySelectorAll('td')[tinx].style.display = '';
+                    if (
+                        el.getAttribute('colspan') !== null &&
+                        Number(el.getAttribute('colspan')) > 1
+                    ) {
+                        var cspan = Number(el.getAttribute('colspan')) - 1;
+                        var spanned =
+                            el.parentNode.nextElementSibling.querySelectorAll(
+                                'td',
+                            )[tinx];
+                        while (cspan > 0) {
+                            spanned.style.display = '';
+                            spanned = spanned.nextElementSibling;
+                            cspan--;
+                        }
+                        spanned.style.display = '';
+                    }
+                    if (Number(el.getAttribute('rowspan')) == 1) {
+                        el.removeAttribute('rowspan');
+                    }
+                } else {
+                    alert('Nessuna cella sottostante da dividere!');
+                }
+                removeAllOnClick();
+            }
+
+            function unsetRowSpan() {
+                if (
+                    confirm(
+                        'Passare alla modalità di divisione verticale (divide in verticale una cella con quella sottostante)?',
+                    )
+                ) {
+                    var els = document
+                        .querySelector('#ffbtablegenerator')
+                        .querySelectorAll('.mainbg tbody td');
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].setAttribute('onclick', 'delRowSpan(this)');
+                    }
+                }
+            }
+
+            function addColSpan(el) {
+                var nextEl = el.nextElementSibling;
+                if (nextEl === null) {
+                    alert('Nessuna cella a destra da unire!');
+                } else {
+                    while (nextEl !== null && nextEl.style.display === 'none') {
+                        nextEl = nextEl.nextElementSibling;
+                    }
+                }
+                if (nextEl !== null) {
+                    el.setAttribute(
+                        'colspan',
+                        el.getAttribute('colspan') !== null
+                            ? (
+                                  Number(el.getAttribute('colspan')) + 1
+                              ).toString()
+                            : '2',
+                    );
+                    nextEl.style.display = 'none';
+                    if (
+                        el.getAttribute('rowspan') !== null &&
+                        Number(el.getAttribute('rowspan')) > 1
+                    ) {
+                        var tinx = Array.from(
+                            nextEl.parentNode.children,
+                        ).indexOf(nextEl);
+                        var rspan = Number(el.getAttribute('rowspan')) - 1;
+                        var spanned = nextEl.parentNode;
+                        while (rspan > 0) {
+                            spanned = spanned.nextElementSibling;
+                            spanned.querySelectorAll('td')[tinx].style.display =
+                                'none';
+                            rspan--;
+                        }
+                    }
+                } else {
+                    alert('Nessuna cella a destra da unire!');
+                }
+                removeAllOnClick();
+            }
+
+            function setColSpan() {
+                if (
+                    confirm(
+                        'Passare alla modalità di unione orizzontale (unione in orizzontale di una cella con quella a destra)?',
+                    )
+                ) {
+                    var els = document
+                        .querySelector('#ffbtablegenerator')
+                        .querySelectorAll('.mainbg tbody td');
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].setAttribute('onclick', 'addColSpan(this)');
+                    }
+                }
+            }
+
+            function delColSpan(el) {
+                if (
+                    el.getAttribute('colspan') !== null &&
+                    Number(el.getAttribute('colspan')) > 1
+                ) {
+                    var nextEl = el;
+                    var cspan = Number(el.getAttribute('colspan')) - 1;
+                    while (cspan > 0) {
+                        nextEl = nextEl.nextElementSibling;
+                        cspan--;
+                    }
+                    el.setAttribute(
+                        'colspan',
+                        (Number(el.getAttribute('colspan')) - 1).toString(),
+                    );
+                    nextEl.style.display = '';
+                    if (
+                        el.getAttribute('rowspan') !== null &&
+                        Number(el.getAttribute('rowspan')) > 1
+                    ) {
+                        var tinx = Array.from(
+                            nextEl.parentNode.children,
+                        ).indexOf(nextEl);
+                        var nextRowEl = el.parentNode;
+                        var rspan = Number(el.getAttribute('rowspan')) - 1;
+                        while (rspan > 0) {
+                            nextRowEl = nextRowEl.nextElementSibling;
+                            nextRowEl.querySelectorAll('td')[
+                                tinx
+                            ].style.display = '';
+                            rspan--;
+                        }
+                    }
+                    if (Number(el.getAttribute('colspan')) == 1) {
+                        el.removeAttribute('colspan');
+                    }
+                } else {
+                    alert('Nessuna cella a destra da dividere!');
+                }
+                removeAllOnClick();
+            }
+
+            function unsetColSpan() {
+                if (
+                    confirm(
+                        'Passare alla modalità di divisione orizzontale (divide in orizzontale una cella con quella sottostante)?',
+                    )
+                ) {
+                    var els = document
+                        .querySelector('#ffbtablegenerator')
+                        .querySelectorAll('.mainbg tbody td');
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].setAttribute('onclick', 'delColSpan(this)');
+                    }
+                }
+            }
+
+            function cellToggleSub() {
+                removeAllOnClick();
+                if (!document.activeElement.hasAttribute('contenteditable')) {
+                    return alert(
+                        'Devi selezionare un elemento nella tabella per poter eseguire questa azione!',
+                    );
+                }
+                if (
+                    document.activeElement.className.indexOf('title top ') !==
+                    -1
+                ) {
+                    document.activeElement.className =
+                        document.activeElement.className.replace(
+                            'title top ',
+                            '',
+                        );
+                } else if (
+                    document.activeElement.className.trim() == 'aa' ||
+                    document.activeElement.className.trim() == 'ww'
+                ) {
+                    document.activeElement.className =
+                        'title top ' + document.activeElement.className;
+                } else {
+                    alert('Azione non valida su questo elemento!');
+                }
+            }
+
+            function execFontSize(size) {
+                removeAllOnClick();
+                var span = document.createElement('span');
+                span.innerHTML = getSelectionHtml();
+                span.style.fontSize = size + 'px';
+
+                document.execCommand('insertHTML', false, span.outerHTML);
+            }
+
+            function execFontFace(font) {
+                removeAllOnClick();
+                var span = document.createElement('span');
+                span.innerHTML = getSelectionHtml();
+                span.style.fontFamily = font;
+
+                document.execCommand('insertHTML', false, span.outerHTML);
+            }
+
+            function doCommand(cmd) {
+                removeAllOnClick();
+                if (!document.activeElement.hasAttribute('contenteditable')) {
+                    return alert(
+                        'Devi selezionare un elemento nella tabella per poter eseguire questa azione!',
+                    );
+                }
+
+                cmd = commands[cmd];
+                if (cmd.cmd == 'foreColor') {
+                    cmd.lang = 'Inserisci il colore del testo';
+                } else if (cmd.cmd == 'fontSize') {
+                    cmd.lang = 'Inserisci la grandezza del testo';
+                } else if (cmd.cmd == 'fontName') {
+                    cmd.lang = 'Inserisci il font del testo';
+                } else if (cmd.cmd == 'backColor') {
+                    cmd.lang = 'Inserisci il colore di sfondo del testo';
+                } else if (cmd.cmd == 'createLink') {
+                    cmd.lang = "Inserisci l'URL";
+                } else if (cmd.cmd == 'insertHtml') {
+                    cmd.lang = "Inserisci l'HTML";
+                } else if (cmd.cmd == 'insertImage') {
+                    cmd.lang = "Inserisci l'URL dell'immagine";
+                } else if (cmd.cmd == 'createLink') {
+                    cmd.lang = "Inserisci l'URL";
+                } else {
+                    cmd.lang = 'Valore per: ' + cmd.cmd;
+                }
+                val =
+                    typeof cmd.val !== 'undefined'
+                        ? prompt(cmd.lang, cmd.val)
+                        : '';
+                document.execCommand('styleWithCSS', true, true);
+                if (cmd.cmd == 'fontSize') {
+                    if (val && getSelectionHtml() != '') {
+                        execFontSize(val);
+                    } else {
+                        alert(
+                            'Devi selezionare un testo per utilizzare questo comando!',
+                        );
+                    }
+                } else if (cmd.cmd == 'fontName') {
+                    if (val && getSelectionHtml() != '') {
+                        execFontFace(val);
+                    } else {
+                        alert(
+                            'Devi selezionare un testo per utilizzare questo comando!',
+                        );
+                    }
+                } else {
+                    document.execCommand(cmd.cmd, false, val || '');
+                }
+
+                // Fix for text-align spans
+                var textAlignSpans = document.querySelectorAll(
+                    '#ffbtablegenerator span[style*="text-align"]',
+                );
+                for (var i = 0; i < textAlignSpans.length; i++) {
+                    textAlignSpans[i].style.display = 'block';
+                    textAlignSpans[i].style.width = '100%';
+                }
+            }
+
+            function doList() {
+                removeAllOnClick();
+                if (confirm('Desideri una lista ordinata numericamente?')) {
+                    return doCommand('insertOrderedList');
+                } else {
+                    return doCommand('insertUnorderedList');
+                }
+            }
+
+            function newStart() {
+                document.querySelector('#ffbtablegenerator_css').innerHTML = '';
+
+                if (
+                    document.querySelector('#ffbtablegenerator_oldbody').style
+                        .display !== 'none'
+                ) {
+                    // Animate slide up and then change content
+                    slideUp(
+                        document.querySelector('#ffbtablegenerator_oldbody'),
+                        'slow',
+                        function () {
+                            document.querySelector(
+                                '#ffbtablegenerator',
+                            ).innerHTML = firstTableHTML;
+                            makeEditable();
+                            slideDown(
+                                document.querySelector(
+                                    '#ffbtablegenerator_start',
+                                ),
+                                'fast',
+                            );
+                        },
+                    );
+                } else if (
+                    document.querySelector('#ffbtablegenerator_body').style
+                        .display !== 'none'
+                ) {
+                    slideUp(
+                        document.querySelector('#ffbtablegenerator_body'),
+                        'slow',
+                        function () {
+                            document.querySelector(
+                                '#ffbtablegenerator',
+                            ).innerHTML = firstTableHTML;
+                            makeEditable();
+                            slideDown(
+                                document.querySelector(
+                                    '#ffbtablegenerator_start',
+                                ),
+                                'fast',
+                            );
+                        },
+                    );
+                } else if (
+                    document.querySelector('#ffbtablegenerator_start_old').style
+                        .display !== 'none'
+                ) {
+                    slideUp(
+                        document.querySelector('#ffbtablegenerator_start_old'),
+                        'slow',
+                        function () {
+                            document.querySelector(
+                                '#ffbtablegenerator',
+                            ).innerHTML = firstTableHTML;
+                            makeEditable();
+                            slideDown(
+                                document.querySelector(
+                                    '#ffbtablegenerator_start',
+                                ),
+                                'fast',
+                            );
+                        },
+                    );
+                } else {
+                    document.querySelector('#ffbtablegenerator').innerHTML =
+                        firstTableHTML;
+                    makeEditable();
+                    slideDown(
+                        document.querySelector('#ffbtablegenerator_start'),
+                        'fast',
+                    );
+                }
+            }
+
+            function oldGenerator() {
+                document.querySelector('#ffbtablegenerator_css').innerHTML = '';
+
+                if (
+                    document.querySelector('#ffbtablegenerator_start').style
+                        .display !== 'none'
+                ) {
+                    slideUp(
+                        document.querySelector('#ffbtablegenerator_start'),
+                        'slow',
+                        function () {
+                            document.querySelector(
+                                '#ffbtablegenerator',
+                            ).innerHTML = firstTableHTML;
+                            makeEditable();
+                            slideDown(
+                                document.querySelector(
+                                    '#ffbtablegenerator_start_old',
+                                ),
+                                'fast',
+                            );
+                        },
+                    );
+                }
+            }
+
+            function newTable() {
+                slideUp(
+                    document.querySelector('#ffbtablegenerator_start'),
+                    'fast',
+                    function () {
+                        slideDown(
+                            document.querySelector('#ffbtablegenerator_body'),
+                            'slow',
+                        );
+                    },
+                );
+            }
+
+            function customHTML() {
+                slideUp(
+                    document.querySelector('#ffbtablegenerator_start'),
+                    'fast',
+                    function () {
+                        slideDown(
+                            document.querySelector(
+                                '#ffbtablegenerator_oldbody',
+                            ),
+                            'slow',
+                        );
+                    },
+                );
+            }
+
+            function addCSS() {
+                removeAllOnClick();
+                let css = prompt(
+                    "Tramite questa funzione potrai aggiungere un codice CSS in questa pagina.\nIl CSS aggiunto non sarà allegato al codice della tabella che riceverai, questa funzione si pone l'obiettivo di farti visualizzare la tabella che andrai a creare con degli stili personalizzati scelti da te.\n\nInserisci qui sotto il codice CSS da aggiungere (se ne avevi già aggiunto uno in precedenza, quest'ultimo sarà rimosso!):",
+                );
+                document.querySelector('#ffbtablegenerator_css').innerHTML = css
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+            }
+
+            function setCustomHTML() {
+                let html = document.querySelector(
+                    '#ffbtablegenerator_oldcode',
+                ).value;
+                if (html.trim() == '') {
+                    return alert("Devi inserire l'html!");
+                }
+
+                var doc = document.createElement('div');
+                doc.innerHTML = html;
+
+                if (doc.querySelector('table') != null) {
+                    document.querySelector('#ffbtablegenerator').innerHTML =
+                        doc.innerHTML;
+                    makeEditable();
+                    slideUp(
+                        document.querySelector('#ffbtablegenerator_oldbody'),
+                        'slow',
+                        function () {
+                            slideDown(
+                                document.querySelector(
+                                    '#ffbtablegenerator_body',
+                                ),
+                                'slow',
+                            );
+                        },
+                    );
+                    return true;
+                }
+                alert('HTML non valido!');
+            }
+
+            function prendi_colore() {
+                removeAllOnClick();
+                window.open(
+                    'http://img.forumfree.net/html/codicecolore.htm',
+                    null,
+                    'width=200,height=300,resizable=no,scrollbars=no',
+                );
+            }
+
+            // Add animate functions to replace jQuery
+            function slideUp(element, speed, callback) {
+                if (!element) return;
+
+                // Store the original height
+                const height = element.offsetHeight;
+                element.style.overflow = 'hidden';
+                element.style.height = height + 'px';
+                element.style.transition = `height ${speed === 'fast' ? 300 : 600}ms ease-out`;
+
+                // Set timeout needed to ensure the browser processes the style changes
+                setTimeout(() => {
+                    element.style.height = '0px';
+                }, 10);
+
+                // Add an event listener for when the transition ends
+                const transitionEndListener = function () {
+                    element.style.display = 'none';
+                    element.style.removeProperty('height');
+                    element.style.removeProperty('transition');
+                    element.style.removeProperty('overflow');
+                    element.removeEventListener(
+                        'transitionend',
+                        transitionEndListener,
+                    );
+
+                    if (typeof callback === 'function') {
+                        callback();
+                    }
+                };
+
+                element.addEventListener(
+                    'transitionend',
+                    transitionEndListener,
+                );
+            }
+
+            function slideDown(element, speed, callback) {
+                if (!element) return;
+
+                // Make sure the element is displayed but with height 0
+                element.style.display = 'block';
+                element.style.overflow = 'hidden';
+                element.style.height = '0px';
+
+                // Get the natural height
+                const height = element.scrollHeight;
+                element.style.transition = `height ${speed === 'fast' ? 300 : 600}ms ease-in`;
+
+                // Set timeout needed to ensure the browser processes the style changes
+                setTimeout(() => {
+                    element.style.height = height + 'px';
+                }, 10);
+
+                // Add an event listener for when the transition ends
+                const transitionEndListener = function () {
+                    element.style.removeProperty('height');
+                    element.style.removeProperty('transition');
+                    element.style.removeProperty('overflow');
+                    element.removeEventListener(
+                        'transitionend',
+                        transitionEndListener,
+                    );
+
+                    if (typeof callback === 'function') {
+                        callback();
+                    }
+                };
+
+                element.addEventListener(
+                    'transitionend',
+                    transitionEndListener,
+                );
+            }
+
+            function initializeTableGenerator() {
+                // Create the main container
+                const mainContainer = document.createElement('div');
+                mainContainer.id = 'ffbtablegenerator_main';
+
+                // Start section
+                const startSection = document.createElement('div');
+                startSection.id = 'ffbtablegenerator_start';
+                startSection.innerHTML =
+                    '<button onmousedown="event.preventDefault();" onclick="event.preventDefault(); newTable();">Crea una nuova tabella</button> oppure <button onmousedown="event.preventDefault();" onclick="event.preventDefault(); customHTML();">Modifica codice vecchia tabella</button><span style="display: block; text-align: right; margin-top: 15px; font-weight: bold; cursor:pointer;"><a onclick="oldGenerator()"><b>Passa alla versione classica</b></a></span>';
+
+                mainContainer.appendChild(startSection);
+
+                // Old start section
+                const oldStartSection = document.createElement('div');
+                oldStartSection.id = 'ffbtablegenerator_start_old';
+                oldStartSection.style.textAlign = 'center';
+                oldStartSection.style.display = 'none';
+                oldStartSection.innerHTML =
+                    '<form id="tbl_form1" name="form1"><br><textarea rows=25 cols=102 name=codice class=textinput></textarea><br><br><table style="margin: auto;"><tr><td style="text-align: left;"><b><font size=2>Celle per sottotitolo</font></b><br>(valori consentiti: 0, 1, numero colonne)</td><td><input type=text name=tile_sub_c value=0 size=2 class=forminput><br></td></tr></table><br><b><font size=2>Righe: </font></b><input style="width:auto" type=text name=righe value=1 size=3 class=forminput>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font size=2>Colonne: </font></b><input style="width:auto" type=text name=colonne value=1 size=3 class=forminput><br><br><br><font size=2>Allineamento: </font> <select size=1 name=align class=forminput><option value=center>Centrato</option><option value=left>A sinistra</option><option value=right>A destra</option></select><br><br><br><input class="codebuttons" type=button value="Genera HTML" onClick="cod_tab(this.form)" id=button><br><br></form><span style="display: block; text-align: right; margin-top: 15px; font-weight: bold; cursor:pointer;"><a onclick="newStart()"><b>Passa alla versione avanzata</b></a></span>';
+
+                mainContainer.appendChild(oldStartSection);
+
+                // Old body section
+                const oldBodySection = document.createElement('div');
+                oldBodySection.id = 'ffbtablegenerator_oldbody';
+                oldBodySection.style.display = 'none';
+                oldBodySection.innerHTML =
+                    '<textarea id="ffbtablegenerator_oldcode" rows="20" style="width: 100%;" class="textinput"></textarea><br><br><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); setCustomHTML();">Modifica questa tabella</button><span style="display: block; text-align: right; margin-top: 15px; font-weight: bold; cursor:pointer;"><a onclick="newStart()">&lt;- Torna all\'inizio</a></span>';
+
+                mainContainer.appendChild(oldBodySection);
+
+                // Body section
+                const bodySection = document.createElement('div');
+                bodySection.id = 'ffbtablegenerator_body';
+                bodySection.style.display = 'none';
+
+                // Editor section
+                const editorSection = document.createElement('div');
+                editorSection.id = 'ffbtablegenerator_editor';
+                editorSection.innerHTML =
+                    '<div><h3 class="ffbtablegenerator_sunbar">Modifiche testuali</h3><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'bold\')" id="ffbtablegenerator_editor_bold" style="font-weight: bold;">B</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'strikeThrough\')" id="ffbtablegenerator_editor_strikeThrough" style="text-decoration: line-through;">S</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'underline\')" id="ffbtablegenerator_editor_underline" style="text-decoration: underline;">U</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'italic\')" id="ffbtablegenerator_editor_italic" style="font-style: italic;">I</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'subscript\')" id="ffbtablegenerator_editor_subscript">x<span style="position:relative;top:0.5em">²</span></button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'createLink\')" id="ffbtablegenerator_editor_createLink" title="Inserisci link sul testo"><i class="fa fa-link" aria-hidden="true"></i></button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'unlink\')" id="ffbtablegenerator_editor_unlink" title="Rimuovi link sul testo"><i class="fa fa-chain-broken" aria-hidden="true"></i></button><br><br><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'backColor\')" id="ffbtablegenerator_editor_backColor" title="Cambia colore di sfondo del testo">Evidenzia</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'fontName\')" id="ffbtablegenerator_editor_fontName" title="Cambia font del testo">Font</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'fontSize\')" id="ffbtablegenerator_editor_fontSize" title="Cambia dimensione del testo">Dimens.</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'foreColor\')" id="ffbtablegenerator_editor_foreColor" title="Cambia colore del testo">Colore</button>         <h3 class="ffbtablegenerator_sunbar">Giustifica testo</h3><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'justifyFull\')" id="ffbtablegenerator_editor_justifyFull"><i class="fa fa-align-justify" aria-hidden="true"></i></button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'justifyCenter\')" id="ffbtablegenerator_editor_justifyCenter"><i class="fa fa-align-center" aria-hidden="true"></i></button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'justifyLeft\')" id="ffbtablegenerator_editor_justifyLeft"><i class="fa fa-align-left" aria-hidden="true"></i></button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'justifyRight\')" id="ffbtablegenerator_editor_justifyRight"><i class="fa fa-align-right" aria-hidden="true"></i></button>          <h3 class="ffbtablegenerator_sunbar">Immissioni speciali</h3><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'insertHorizontalRule\')" id="ffbtablegenerator_editor_insertHorizontalRule">Separatore</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'insertHTML\')" id="ffbtablegenerator_editor_insertHTML">HTML</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'insertImage\')" id="ffbtablegenerator_editor_insertImage">IMG</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doList()" id="ffbtablegenerator_editor_insertOrderedList"><i class="fa fa-list-ol" aria-hidden="true"></i></button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'insertParagraph\')" id="ffbtablegenerator_editor_insertParagraph" title="Inserisci paragrafo">P</button></div>';
+                editorSection.innerHTML +=
+                    '<div><h3 class="ffbtablegenerator_sunbar">Layout</h3><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'indent\')" id="ffbtablegenerator_editor_indent" title="Inserisci indent"><i class="fa fa-indent" aria-hidden="true"></i></button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'outdent\')" id="ffbtablegenerator_editor_outdent" title="Rimuovi indent"><i class="fa fa-outdent" aria-hidden="true"></i></button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); doCommand(\'removeFormat\')" id="ffbtablegenerator_editor_removeFormat">Rimuovi formattazione</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); cellToggleSub()">Toggle sottotitolo</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); cellFormat()">Svuota cella</button><br><br><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); addRow()">Aggiungi riga</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); addColumn()">Aggiungi colonna</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); removeRow()">Rimuovi riga</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); removeColumn()">Rimuovi colonna</button><br><br><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); setRowSpan()">Unione verticale</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); unsetRowSpan()">Divisione verticale</button><br><br><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); setColSpan()">Unione orizzontale</button><button onmousedown="event.preventDefault();" onclick="event.preventDefault(); unsetColSpan()">Divisione orizzontale</button></div>';
+
+                bodySection.appendChild(editorSection);
+
+                // CSS style element
+                const cssStyle = document.createElement('style');
+                cssStyle.id = 'ffbtablegenerator_css';
+                bodySection.appendChild(cssStyle);
+
+                // Table container
+                const tableContainer = document.createElement('div');
+                tableContainer.id = 'ffbtablegenerator';
+                tableContainer.innerHTML = firstTableHTML;
+                bodySection.appendChild(tableContainer);
+
+                // Code textarea and controls
+                const codeTextarea = document.createElement('textarea');
+                codeTextarea.id = 'ffbtablegenerator_code';
+                codeTextarea.readonly = true;
+                codeTextarea.rows = 10;
+                codeTextarea.style.width = '100%';
+                codeTextarea.style.marginTop = '40px';
+                codeTextarea.className = 'textinput';
+                bodySection.appendChild(codeTextarea);
+
+                const colorGenContainer = document.createElement('div');
+                colorGenContainer.id = 'colorgen_p';
+                colorGenContainer.innerHTML =
+                    '<input class="codebuttons" id="colorgen" type="textinput">';
+                bodySection.appendChild(colorGenContainer);
+
+                const controls = document.createElement('span');
+                controls.style.display = 'block';
+                controls.style.textAlign = 'right';
+                controls.style.marginTop = '15px';
+                controls.style.fontWeight = 'bold';
+                controls.style.cursor = 'pointer';
+
+                if (window.isColorInputSupported) {
+                    controls.innerHTML =
+                        '<a onclick="prendi_colore()"><b>Colori</b></a>: <input type="color" class="codebuttons color_input" value="#000000" onchange="changeColor(this.value)">';
+                } else {
+                    controls.innerHTML =
+                        '<a onclick="prendi_colore()"><b>Generatore colori</b></a>';
+                }
+
+                controls.innerHTML +=
+                    ' - <a onclick="addCSS()"><b>Aggiungi CSS</b></a> - <a onclick="newStart()">&lt;- Torna all\'inizio</a>';
+                bodySection.appendChild(controls);
+
+                mainContainer.appendChild(bodySection);
+
+                // Add to document
+                document.body.appendChild(mainContainer);
+
+                // Filter out unsupported commands
+                for (var index in commands) {
+                    if (commands.hasOwnProperty(index)) {
+                        if (
+                            !!!document.queryCommandSupported(
+                                commands[index]['cmd'],
+                            )
+                        ) {
+                            const commandElement = document.querySelector(
+                                '#ffbtablegenerator_editor_' +
+                                    commands[index]['cmd'],
+                            );
+                            if (commandElement) {
+                                commandElement.remove();
+                            }
+                        }
+                    }
+                }
+
+                removeAllOnClick();
+                makeEditable();
+
+                // Replace interval with vanilla JS
+                setInterval(function () {
+                    document.querySelector('#ffbtablegenerator_code').value =
+                        taketableHTML();
+                }, 500);
+            }
+
+            // This function would be called after DOM is fully loaded
+            document.addEventListener('DOMContentLoaded', function () {
+                initializeTableGenerator();
+            });
+        </script>
+    </body>
+</html>

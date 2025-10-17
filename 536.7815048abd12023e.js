@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpages=self.webpackChunkpages||[]).push([[536],{7536:(s,d,t)=>{t.r(d),t.d(d,{widgetsRoutes:()=>l});const l=[{path:"",children:[{path:"",redirectTo:"upload",pathMatch:"full"},{path:"upload",loadComponent:()=>Promise.all([t.e(921),t.e(748),t.e(3),t.e(134),t.e(498)]).then(t.bind(t,6046)).then(o=>o.UploadComponent),data:{title:"Upload"}}]}]}}]);

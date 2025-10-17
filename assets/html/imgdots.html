@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ImgDots Generator</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <style id="imgdotsCss">
+            .imgdots-container {
+                position: relative;
+                width: 100%;
+                max-width: 100%;
+                line-height: 0;
+                overflow: visible;
+                background-color: #eee;
+            }
+            .imgdots-container > img {
+                display: block;
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+                user-select: none;
+                pointer-events: none;
+            }
+            .imgdots-container > .dot {
+                position: absolute;
+                display: block !important;
+                transition:
+                    background-color 0.2s,
+                    border-color 0.2s;
+            }
+            .imgdots-container > .dot .dot-point {
+                position: relative;
+                width: 20px;
+                height: 20px;
+                background-color: black;
+                border: 2px solid white;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                transition:
+                    background-color 0.2s,
+                    border-color 0.2s;
+            }
+            .imgdots-container > .dot .dot-point span {
+                color: white;
+                font-weight: bold;
+                font-size: 10px;
+                user-select: none;
+            }
+            .imgdots-container > .dot .dot-value {
+                position: absolute;
+                display: block;
+                visibility: hidden;
+                opacity: 0;
+                background: rgba(0, 0, 0, 0.85);
+                color: #fff;
+                padding: 8px 12px;
+                border-radius: 4px;
+                min-width: min(350px, 100vw);
+                max-width: min(500px, 100vw);
+                z-index: 100;
+                pointer-events: auto;
+                line-height: 1.4;
+                font-size: 0.9rem;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+                transform: translate(-50%, -100%) translateY(-30px);
+                transition:
+                    opacity 0.2s ease-in-out,
+                    visibility 0.2s ease-in-out;
+                max-height: 300px;
+                overflow: auto;
+            }
+            .imgdots-container > .dot:hover .dot-value,
+            .imgdots-container > .dot .dot-point:hover + .dot-value,
+            .imgdots-container > .dot .dot .dot-value:hover {
+                visibility: visible;
+                opacity: 1;
+            }
+            .imgdots-container > .dot:hover .dot-value:empty,
+            .imgdots-container > .dot .dot-point:hover + .dot-value:empty,
+            .imgdots-container > .dot .dot-value:empty:hover {
+                visibility: hidden !important;
+                opacity: 0 !important;
+            }
+            .imgdots-container > .dot .dot-point:hover {
+                background-color: white;
+                border-color: black;
+                z-index: 11;
+            }
+            .imgdots-container > .dot .dot-point:hover span {
+                color: black;
+            }
+        </style>
+        <style>
+            container {
+                display: flex;
+                gap: 20px;
+                flex-direction: column;
+            }
+
+            .html-wrapper {
+                flex-direction: column;
+                gap: 15px; /* Ridotto gap */
+                flex: 1;
+                overflow-y: auto;
+                min-width: 30%;
+                display: flex;
+                padding-left: 20px;
+            }
+            .html-wrapper textarea {
+                flex: 1;
+                resize: none;
+                font-family: monospace;
+                font-size: 0.85em;
+                min-height: 150px; /* Altezza minima textarea */
+            }
+            .input-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap; /* Wrap per schermi piccoli */
+            }
+            section#generator {
+                display: flex;
+                flex-wrap: wrap; /* Wrap per schermi piccoli */
+                gap: 20px; /* Spazio tra contenitore immagine e controlli */
+            }
+            section#generator > div:first-child {
+                /* Contenitore immagine */
+                flex: 1 1 65%; /* Permette di crescere/restringersi, base 65% */
+                min-width: 300px; /* Larghezza minima */
+                border: 2px dashed #ccc;
+                background-color: #f0f0f0;
+            }
+            section#generator > div:first-child > img {
+                opacity: 0.9;
+                height: 100%;
+            }
+            section#generator > div:last-child {
+                /* Contenitore controlli */
+                flex: 1 1 30%; /* Permette di crescere/restringersi, base 30% */
+                min-width: 250px;
+            }
+
+            @media (max-width: 992px) {
+                /* Stack verticale su schermi medi/piccoli */
+                section#generator > div:first-child,
+                section#generator > div:last-child {
+                    flex-basis: 100%; /* Occupa tutta la larghezza */
+                }
+                .html-wrapper {
+                    padding-left: 0;
+                    margin-top: 0;
+                }
+            }
+            @media (max-width: 768px) {
+                /* Input immagine e bottone in colonna */
+                .input-container {
+                    flex-direction: column;
+                }
+                .input-container > * {
+                    width: 100% !important;
+                    margin-bottom: 10px;
+                }
+                .input-container > *:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            /* Stile specifico per il punto SELEZIONATO nell'editor */
+            .dot.selected .dot-point {
+                background-color: #28a745; /* Verde Bootstrap success */
+                border-color: #fff;
+                z-index: 11; /* Sopra gli altri punti */
+                box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5); /* Glow per evidenza */
+            }
+            .dot.selected .dot-point span {
+                color: white; /* Colore testo nel punto selezionato */
+            }
+
+            .point-controls {
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+                flex-wrap: wrap; /* Wrap pulsanti */
+            }
+            #pointInfo {
+                background-color: #f8f9fa;
+                padding: 15px;
+                border-radius: 5px;
+                border: 1px solid #dee2e6;
+            }
+        </style>
+    </head>
+    <body>
+        <container class="p-3">
+            <section>
+                <ol>
+                    <li>
+                        Clicca sull'immagine per aggiungere un nuovo punto
+                        (dot). In basso comparirà una textarea dove potrai
+                        inserire l'HTML da mostrare nel popup al passaggio del
+                        mouse sul punto.
+                    </li>
+                    <li>
+                        Puoi modificare l'HTML visibile al passaggio del mouse
+                        utilizzando l'apposita textarea. Questo contenuto può essere
+                        un video, del testo, o qualsiasi altro elemento HTML.
+                    </li>
+                    <li>
+                        Puoi spostare l'ultimo punto selezionato usando le
+                        frecce della tastiera. Il punto attivo è sempre l'ultimo
+                        inserito oppure quello che selezioni cliccane uno esistente.
+                    </li>
+                </ol>
+            </section>
+            <section class="input-container gap-2">
+                <input
+                    type="text"
+                    id="imgUrlInput"
+                    class="form-control w-auto flex-fill"
+                    placeholder="https://example.com/image.jpg"
+                    value="https://i.imgur.com/ClfqedZ.png"
+                    aria-label="URL immagine di sfondo"
+                />
+                <button id="setImgBtn" class="btn btn-primary flex-shrink-0">
+                    Imposta sfondo
+                </button>
+            </section>
+
+            <section id="generator">
+                <div class="imgdots-container">
+                    <img src="https://i.imgur.com/ClfqedZ.png" />
+                </div>
+
+                <div id="imgdotsInputs" class="html-wrapper">
+                    <textarea
+                        id="imgdots_htmlgen"
+                        class="form-control"
+                        rows="10"
+                        placeholder="Il codice HTML+CSS generato apparirà qui..."
+                        aria-live="polite"
+                    ></textarea>
+                    <button
+                        class="btn btn-secondary"
+                        id="reloadBtn"
+                        title="Carica il codice dalla textarea nell'editor (sovrascrive i punti attuali)"
+                    >
+                        Ricarica HTML nell'Editor
+                    </button>
+                    <button
+                        id="resetPointsBtn"
+                        class="btn btn-danger"
+                        title="Elimina tutti i punti dall'editor"
+                    >
+                        Reset Punti
+                    </button>
+                </div>
+            </section>
+
+            <!-- Nascosto inizialmente -->
+            <section id="pointInfo" style="display: none">
+                <h5>Informazioni Punto Selezionato</h5>
+                <div id="pointCoords" class="mb-2 text-muted">
+                    Nessun punto selezionato
+                </div>
+                <textarea
+                    id="pointContent"
+                    class="form-control mt-1"
+                    rows="4"
+                    placeholder="Inserisci qui il codice HTML del popup..."
+                    aria-label="Contenuto HTML del popup per il punto selezionato"
+                ></textarea>
+                <div class="point-controls">
+                    <button id="savePointBtn" class="btn btn-success">
+                        Salva Contenuto
+                    </button>
+                    <button id="deletePointBtn" class="btn btn-warning">
+                        Elimina Punto
+                    </button>
+                </div>
+            </section>
+        </container>
+
+        <script>
+            'use strict';
+
+            const generatorContainer = document.querySelector(
+                'section#generator > .imgdots-container',
+            );
+            const generatorImage = document.querySelector(
+                'section#generator > .imgdots-container > img',
+            );
+            // Rimosso riferimento a previewPopup
+            const pointInfo = document.getElementById('pointInfo');
+            const pointCoords = document.getElementById('pointCoords');
+            const pointContent = document.getElementById('pointContent');
+            const savePointBtn = document.getElementById('savePointBtn');
+            const deletePointBtn = document.getElementById('deletePointBtn');
+            const resetPointsBtn = document.getElementById('resetPointsBtn');
+            const htmlGenTextarea = document.getElementById('imgdots_htmlgen');
+            const reloadBtn = document.getElementById('reloadBtn');
+            const imgUrlInput = document.getElementById('imgUrlInput');
+            const setImgBtn = document.getElementById('setImgBtn');
+
+            let pointsData = {}; // { 'i1': { x: 50, y: 50, content: '...' }, ... }
+            let counter = 0;
+            let selectedPointId = null;
+
+            // --- Funzioni Helper ---
+            function getNextId() {
+                counter++;
+                while (pointsData[`i${counter}`]) {
+                    counter++;
+                }
+                return `i${counter}`;
+            }
+
+            // MODIFICATO: Crea/Aggiorna dot
+            function updatePointElement(id) {
+                const point = pointsData[id];
+                if (!point) return;
+
+                let dotElement = generatorContainer.querySelector(
+                    `.dot[data-point-id='${id}']`,
+                );
+
+                if (!dotElement) {
+                    // Crea entrambi se il punto non esiste
+                    dotElement = document.createElement('div');
+                    dotElement.className = 'dot'; // Usa la classe base
+                    dotElement.dataset.pointId = id;
+
+                    const dotPoint = document.createElement('div');
+                    dotPoint.className = 'dot-point'; // Usa la classe base
+                    dotPoint.innerHTML = `<span>${id.substring(1)}</span>`;
+
+                    const dotValue = document.createElement('div');
+                    dotValue.className = 'dot-value'; // Usa la classe base
+
+                    dotElement.appendChild(dotPoint);
+                    dotElement.appendChild(dotValue);
+                    generatorContainer.appendChild(dotElement);
+                }
+
+                // Applica stili inline per la posizione
+                dotElement.style.display = `none`;
+                dotElement.style.left = `${point.x}%`;
+                dotElement.style.top = `${point.y}%`;
+                dotElement.querySelector('.dot-value').innerHTML = `${
+                    point.content || ''
+                }`;
+
+                // Gestione classe 'selected' (solo stile generatore)
+                if (id === selectedPointId) {
+                    dotElement.classList.add('selected');
+                } else {
+                    dotElement.classList.remove('selected');
+                }
+            }
+
+            function removePointElement(id) {
+                const dot = generatorContainer.querySelector(
+                    `.dot[data-point-id='${id}']`,
+                );
+                dot?.remove();
+            }
+
+            function selectPoint(id) {
+                const previouslySelectedId = selectedPointId;
+                selectedPointId = id;
+
+                // Aggiorna stile punto precedente (se esiste)
+                if (previouslySelectedId && pointsData[previouslySelectedId]) {
+                    generatorContainer
+                        .querySelector(
+                            `.dot[data-point-id='${previouslySelectedId}']`,
+                        )
+                        ?.classList.remove('selected');
+                }
+
+                // Aggiorna stile punto attuale e pannello info
+                if (id && pointsData[id]) {
+                    const point = pointsData[id];
+                    const dotElement = generatorContainer.querySelector(
+                        `.dot[data-point-id='${id}']`,
+                    );
+                    if (dotElement) {
+                        dotElement.classList.add('selected'); // Applica stile selezionato (solo generatore)
+                        pointCoords.innerHTML = `Punto ${id.substring(
+                            1,
+                        )}: X=${point.x.toFixed(1)}%, Y=${point.y.toFixed(1)}%`;
+                        pointContent.value = point.content || '';
+                        pointInfo.style.display = 'block';
+                    }
+                } else {
+                    pointInfo.style.display = 'none';
+                    pointCoords.innerHTML = `Nessun punto selezionato`;
+                    pointContent.value = '';
+                }
+            }
+
+            const genHtml = () => {
+                const loadElement = document.createElement('div');
+                loadElement.innerHTML = generatorContainer.outerHTML;
+                loadElement.querySelectorAll('.selected').forEach((el) => {
+                    el.classList.remove('selected');
+                });
+                htmlGenTextarea.value = loadElement.innerHTML.replace(
+                    />\s+</g,
+                    '><',
+                );
+                htmlGenTextarea.scrollTop = 0; // Mostra inizio codice
+            };
+
+            // --- Event Listeners --- (Logica invariata, ma ora agiscono su DOM con anteprima CSS)
+            setImgBtn.addEventListener('click', () => {
+                const url = imgUrlInput.value.trim();
+                if (url) {
+                    try {
+                        new URL(url);
+                        generatorImage.src = url;
+                        generatorImage.onerror = () => {
+                            alert(
+                                "Errore caricando l'immagine. Controlla l'URL.",
+                            );
+                            generatorImage.src =
+                                'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+                            /* Immagine vuota */ genHtml();
+                        };
+                        generatorImage.onload = () => genHtml();
+                    } catch (e) {
+                        alert('URL immagine non valido.');
+                    }
+                } else {
+                    alert("Inserisci un URL per l'immagine.");
+                }
+            });
+
+            generatorContainer.addEventListener('click', (e) => {
+                if (
+                    e.target !== generatorContainer &&
+                    e.target !== generatorImage
+                )
+                    return;
+                const rect = generatorContainer.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                // Clamp values between 0 and 100 (important for percentages)
+                const clampedX = Math.max(0, Math.min(100, x)).toFixed(1);
+                const clampedY = Math.max(0, Math.min(100, y)).toFixed(1);
+
+                const newId = getNextId();
+                pointsData[newId] = {
+                    x: parseFloat(clampedX),
+                    y: parseFloat(clampedY),
+                    content: '',
+                };
+                updatePointElement(newId); // Crea elementi nel DOM del generatore
+                selectPoint(newId); // Seleziona il nuovo punto
+                genHtml(); // Aggiorna output nella textarea
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!selectedPointId || !pointsData[selectedPointId]) return;
+                if (
+                    document.activeElement === pointContent ||
+                    document.activeElement === imgUrlInput
+                )
+                    return; // Ignora anche input URL
+
+                const point = pointsData[selectedPointId];
+                const step = e.shiftKey ? 1.0 : 0.1;
+                let changed = false;
+                let newX = point.x,
+                    newY = point.y;
+
+                switch (e.key) {
+                    case 'ArrowLeft':
+                        newX -= step;
+                        changed = true;
+                        break;
+                    case 'ArrowRight':
+                        newX += step;
+                        changed = true;
+                        break;
+                    case 'ArrowUp':
+                        newY -= step;
+                        changed = true;
+                        break;
+                    case 'ArrowDown':
+                        newY += step;
+                        changed = true;
+                        break;
+                }
+                if (changed) {
+                    e.preventDefault();
+                    // Clamp e arrotonda
+                    point.x = parseFloat(
+                        Math.max(0, Math.min(100, newX)).toFixed(1),
+                    );
+                    point.y = parseFloat(
+                        Math.max(0, Math.min(100, newY)).toFixed(1),
+                    );
+                    updatePointElement(selectedPointId); // Aggiorna DOM generatore
+                    pointCoords.innerHTML = `Punto ${selectedPointId.substring(1)}: X=${
+                        point.x
+                    }%, Y=${point.y}%`; // Aggiorna info panel
+                    genHtml(); // Aggiorna output textarea
+                }
+            });
+
+            savePointBtn.addEventListener('click', () => {
+                if (!selectedPointId || !pointsData[selectedPointId]) return;
+                pointsData[selectedPointId].content = pointContent.value || '';
+                // Aggiorna l'elemento .dot-value nel DOM del generatore
+                const htmlElement = generatorContainer.querySelector(
+                    `.dot[data-point-id='${selectedPointId}'] .dot-value`,
+                );
+                console.log(htmlElement, pointContent.value);
+                if (htmlElement) {
+                    htmlElement.innerHTML = pointsData[selectedPointId].content;
+                }
+                genHtml(); // Aggiorna output textarea
+                savePointBtn.textContent = 'Salvato!';
+                savePointBtn.classList.add('btn-success');
+                savePointBtn.classList.remove('btn-primary');
+                setTimeout(() => {
+                    savePointBtn.textContent = 'Salva Contenuto';
+                    savePointBtn.classList.remove('btn-success');
+                    savePointBtn.classList.add('btn-primary');
+                }, 1500);
+            });
+
+            deletePointBtn.addEventListener('click', () => {
+                if (!selectedPointId || !pointsData[selectedPointId]) return;
+                if (
+                    confirm(
+                        `Sei sicuro di voler eliminare il punto ${selectedPointId.substring(
+                            1,
+                        )}?`,
+                    )
+                ) {
+                    const idToDelete = selectedPointId;
+                    removePointElement(idToDelete); // Rimuove dal DOM generatore
+                    delete pointsData[idToDelete]; // Rimuove dai dati
+                    selectPoint(null); // Deseleziona
+                    genHtml(); // Aggiorna output textarea
+                }
+            });
+
+            resetPointsBtn.addEventListener('click', () => {
+                if (confirm('Sei sicuro di voler eliminare TUTTI i punti?')) {
+                    generatorContainer
+                        .querySelectorAll('.dot')
+                        .forEach((el) => el.remove());
+                    pointsData = {};
+                    counter = 0;
+                    selectPoint(null);
+                    genHtml();
+                }
+            });
+
+            reloadBtn.addEventListener('click', () => {
+                let loadElement = document.createElement('div');
+                loadElement.innerHTML = htmlGenTextarea.value;
+                if (
+                    !loadElement.querySelector('.imgdots-container') ||
+                    loadElement.querySelector('.selected')
+                ) {
+                    alert(
+                        'Il codice nella textarea non sembra un output valido di ImgDots.',
+                    );
+                    return;
+                }
+                loadElement = loadElement.querySelector('.imgdots-container');
+
+                if (
+                    !confirm(
+                        "ATTENZIONE: Sovrascriverà i punti nell'editor con quelli dalla textarea. Continuare?",
+                    )
+                )
+                    return;
+
+                try {
+                    generatorContainer
+                        .querySelectorAll('.dot')
+                        .forEach((el) => el.remove());
+                    pointsData = {};
+                    counter = 0;
+                    selectPoint(null);
+
+                    const imgElement =
+                        loadElement.querySelector(':scope > img');
+                    if (imgElement && imgElement.src) {
+                        generatorImage.src = imgElement.src;
+                        imgUrlInput.value = imgElement.src;
+                    } else {
+                        console.warn('Immagine non trovata nel codice.');
+                        generatorImage.src =
+                            'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+                    }
+
+                    const dots = loadElement.querySelectorAll(':scope > .dot');
+                    let maxIdNum = 0;
+                    for (const dot of dots) {
+                        const id = dot.dataset.pointId;
+                        if (!id || !id.startsWith('i')) continue;
+                        const num = parseInt(id.substring(1));
+                        if (isNaN(num)) continue;
+                        maxIdNum = Math.max(maxIdNum, num);
+                        const x = parseFloat(dot.style.left);
+                        const y = parseFloat(dot.style.top);
+                        if (!isNaN(x) && !isNaN(y)) {
+                            pointsData[id] = {
+                                x,
+                                y,
+                                content:
+                                    dot.querySelector('.dot-value')
+                                        ?.innerHTML ?? '',
+                            };
+                            updatePointElement(id);
+                        }
+                    }
+
+                    counter = maxIdNum;
+
+                    genHtml();
+                    alert(`Punti caricati: ${Object.keys(pointsData).length}.`);
+                } catch (error) {
+                    console.error('Errore caricamento HTML:', error);
+                    alert(`Errore: ${error.message}`);
+                    genHtml(); // Tenta ripristino
+                }
+            });
+
+            generatorContainer.addEventListener('click', (e) => {
+                const target = e.target.closest('div.dot');
+
+                if (!target) return;
+
+                e.stopPropagation(); // Evita creazione punto cliccando su uno esistente
+                const id = target.dataset.pointId;
+                selectPoint(id);
+            });
+
+            genHtml();
+        </script>
+    </body>
+</html>
