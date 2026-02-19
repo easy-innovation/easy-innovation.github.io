@@ -1,0 +1,1130 @@
+body {background-attachment: fixed; margin: 0; padding: 0; text-align: center} div, table, .tabs.top , .tabs.bottom {margin: 0 auto}
+h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; font-size: 1em; font-weight: inherit}
+table {font-size: 1em} .mback, table.skin_tbl {width: 100%} table.color {table-layout: fixed; width: 100%}
+* {word-wrap: break-word} input, select {white-space: nowrap !important}
+button, input, select {cursor: pointer} input[type=text] {cursor: text}
+img, button, label, input, select {vertical-align: middle} label input, .color img {vertical-align: bottom} .color iframe {max-width: 100%}
+img {max-width: 100%; height: auto; border: 0} .nav img, .buttons img, .mini_buttons img, button img, .UP img, marquee img {max-width: none} #f_up {display: none; z-index: 10 !important}
+.board .mback, .tag .mback, .send img, #smilies img, .u_status, label, .UP {cursor: pointer}
+.container {position: relative} #cleardiv {clear: both; margin-bottom: -1em}
+.menuwrap {overflow: hidden} .Fixed {z-index: 100; width: 100%; position: fixed !important; position: absolute; top: 0; left: 0} .Ghost {visibility: hidden} .anchor {position: relative} .anchor * {position: absolute; top:-3em}
+.menuwrap ul {list-style-type: none; margin: 0; padding: 0; text-align: left}
+.menuwrap li {display: inline-block; vertical-align: middle; margin: 0; padding: 0}
+.menu ul {display: none; position: absolute; z-index: 100}
+.menuwrap li:hover > ul {display: block}
+.menuwrap .avatar, .menuwrap .nick {vertical-align: middle}
+.menu li {display: block !important}
+.menu li strong {display: block} .menuwrap a {display: block; direction: ltr} .menu a {cursor: pointer} .menuwrap form a {vertical-align: middle; display: inline-block}
+.left .submenu ul {top: 0; left: 100%} .right .submenu ul {top: 0; right: 100%} .submenu.alternative {position: relative}
+.left .icon ul, .right .menu ul {margin-left: -1em !important}
+.right .icon ul {margin-left: -2em !important}
+.left .icon:first-child ul, .left .submenu ul {margin-left: 0 !important}
+.menuwrap em, .yy em {font-size: 13px; font-weight: bold; font-style: normal; border-radius: 3px !important; padding: 3px 8px !important}
+.menuwrap input[type=submit] {font-size: 12px; padding: 3px !important}
+.menuwrap span {display: inline-block}
+.menuwrap .avatar {line-height: normal; overflow: hidden; max-width: none; width: 20px; height: 19px}
+.avatar {display: inline-block; max-width: 100%} .post .avatar {display: block}
+form {margin: 0; padding: 0} .menuwrap form {line-height: normal}
+.thumbs a {display: inline-block; vertical-align: middle; overflow: hidden; width: 40px; height: 40px; margin: 4px; padding: 0; border-radius: 4px; border: 0 !important}
+.thumbs a *, .menuwrap .avatar * {width: 100%; min-height: 100%; border-radius: 4px}
+#msg .cp .thumbs a {width: 32px; height: 32px; padding: 0}
+.group .thumbs a {width: 90%; height: 60px; margin: 0} .group .thumbs a * {min-height: 0}
+.thumb span {display: inline-block; vertical-align: middle; padding: 8px; text-align: center}
+.tmb {max-height: 100px} .desc img {border-radius: 4px; margin: 6px 6px 6px 0}
+.tabs.right {position: absolute; top: 0; left: 100%} .tabs.left {position: absolute; top: 0; right: 100%} :root .tabs.left.rotate {left: auto} @-moz-document url-prefix(){.tabs.right.rotate{margin-left: 1px}}
+.tabs.right.rotate {white-space: nowrap; text-align: left; -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); -webkit-transform: rotate(90deg); -moz-transform-origin: bottom left; -ms-transform-origin: bottom left; -o-transform-origin: bottom left; -webkit-transform-origin: bottom left} .tabs.left.rotate {white-space: nowrap; text-align: right; -moz-transform: rotate(270deg); -ms-transform: rotate(270deg); -o-transform: rotate(270deg); -webkit-transform: rotate(270deg); -moz-transform-origin: bottom right; -ms-transform-origin: bottom right; -o-transform-origin: bottom right; -webkit-transform-origin: bottom right}
+.tabs.no_rotate li {display: block} .tabs.alternative li a {display: inline} .tabs.left.alternative li {text-align: right} .tabs.right.alternative li {text-align: left}
+.mleft_top, .mleft, .mleft_bottom, .mright_top, .mright, .mright_bottom, .msub {display: none}
+.mback_right {text-align: center} .plus, .minus {display: inline-block; background-position: center; background-repeat: no-repeat}
+div.aa, div.bb, div.cc, div.ww, div.xx, div.yy, div.zz {display: inline-block; vertical-align: middle; margin: 0; padding: 4px 1%}
+.Sub {display: inline-block; vertical-align: middle} .Item {margin: 0; padding: 4px 1%} .sidebar .Item {padding: 1px 2%} .Justify {text-align: justify !important} .Break {width: 100%; height: 0; visibility: hidden} .menuwrap .left, .sidebar.left {float: left} .menuwrap .right, .sidebar.right {float: right}
+.Justify .left, .Justify .lt, .skin_tbl, .sidebar, .navsub, .bb, .zz {text-align: left} .Justify .right, .Justify .rt, .yy {text-align: right} .aa, .ww, .xx, .title.bottom, .darkbar {text-align: center}
+.board .aa {width: 6%} .board .bb {width: 46%} .board .yy {width: 18%} .board .zz {width: 22%} .board .s {float: left; margin: 4px 12px 3px 4px; background-repeat: no-repeat}
+#centerdiv .board .aa {width: 8%} #centerdiv .board .bb {width: 60%} #centerdiv .board .zz {width: 26%}
+.forum .aa {width: 5%} .forum .bb {width: 41%} .forum .xx, .forum .yy {width: 13%} .forum .zz {width: 18%}
+.web {display: inline} .board .when, .forum .when {font-size: .9em}
+.forum .zz {position: relative} .forum .zz input {position: absolute; right: 5%; top: 20%}
+.stats .aa {width: 6%} .stats .zz {width: 90%} .side_stats .right, .side_online .right {width: 66%; padding-left: 2%} .side_stats .left, .side_online .left {width: 32%; text-align: center}
+dl {margin: 0} dl > *:last-child {margin: 0} dt:after {content:':'} dt, dd {display: inline; margin: 0 .4em 0 0}
+.mods dd:after, .subs dd:after, .birthday dd:after, .tags dd:after {content:','} .mods dd:last-child:after, .subs dd:last-child:after, .birthday dd:last-child:after, .tags dd:last-child:after {content: none}
+.users, .groups, .lastreg, .birthday {list-style-type: none; margin: 6px 0 2px 0; padding: 0} .users li {display: inline; margin: 0; padding: 0}
+.groups dd {display: inline-block} .groups dd:before {content:'['} .groups dd:after {content:']'}
+.record dt:after {content: none} .record dd {font-weight: bold}
+.lastreg a {text-decoration: none; font-weight: bold}
+.ip_address dd:before {content:'[ '} .ip_address dd:after {content:' ]'} .online .ip_address dd:before {content:'['} .online .ip_address dd:after {content:']'} .members dt, .online dt, .profile .ip_address dt {display: none} .members dl, #msg .top dl {font-size: .8em !important}
+.online .aa {width: 6%} .online .bb {width: 30%} .online .yy {width: 42%; text-align: left} .online .zz {width: 14%; text-align: center}
+.group .left {width: 16%; font-weight: bold; text-align: left} .group .right {width: 80%; text-align: left}
+.group .aa {width: 10%} .group .bb {width: 22%} .group .cc {width: 14%; text-align: center} .group .xx {width: 16%; text-align: center} .group .yy {width: 8%; text-align: center} .group .zz {width: 18%; text-align: center}
+.members .aa {width: 6%} .members .bb {width: 24%} .members .cc {width: 14%; text-align: center} .members .xx {width: 12%} .members .yy, .members .zz {width: 16%; text-align: center}
+.online .thumbs a, .members .thumbs a, .group .thumbs a {margin: 0}
+.online .bb a, .members .bb a, .group .bb a {font-weight: bold}
+.online .bb div, .online .when, .members .bb div, .group .bb div {font-size: .8em}
+.online li .zz, .members li .zz, .group li .zz, .group li .ww {font-size: .9em}
+#msg .cp .aa {width: 5%} #msg .cp .bb {width: 34%} #msg .cp .xx {width: 23%; text-align: right} #msg .cp .yy {width: 5%; text-align: center} #msg .cp .zz {width: 16%} #msg .cp .title.bottom {text-align: right}
+.tabs2 div {cursor: pointer; height: 100%; padding: 1.5em 0}
+#user .forum .bb {width: 48%} #user .forum .yy {width: 14%} #user .forum .zz {width: 16%} #user .forum div.Sub {width: 4%; text-align: center}  #user .forum .title.bottom {text-align: right}
+.profile .skin_tbl {text-align: center}
+.profile .Sub.left {width: 38%; vertical-align: top} .profile .Sub.right {width: 58%; overflow-x: auto} .profile dt.Sub {width: 28%} .profile dd.Sub {width: 68%} .profile .nick {display: inline-block} .profile #tab4 * {max-width: 100%; width: auto !important}
+.profile #tab2 dl:last-child dt:after {content: none}
+.profile dt, .tags dt, .u_group {font-weight: bold}
+.buttons a, .mini_buttons a {display: inline-block; white-space: nowrap}
+.buttons {text-align: right} .sidebar .buttons {text-align: center}
+.current_forum {font-weight: bold; font-size: .9em}
+.List, .list, .big_list, .main_list, .side_list, .tabs, .tabs2, .pages, .pages2 {list-style-type: none; margin: 0; padding: 0}
+.tabs li {margin: 0; padding: 0; white-space: nowrap}
+.pages {text-align: left} .pages li {display: inline; margin: 0; padding: 0 .2em}
+.pages li a {white-space: nowrap} .pages .current {font-weight: bold} .pages .current:before {content:'['} .pages .current:after {content:']'}
+.pages .lastpost:before {content:' ( '} .pages .lastpost:after {content:' )'}
+.pages2 {display: inline; white-space: nowrap} .pages2 li {display: inline; margin: 0; padding: 0 .2em} .pages2:before {content:'('} .pages2:after {content:')'}
+.nav {list-style-type: none; margin: 0 auto .5em auto; padding: 1px; text-align: left} .nav li {display: inline; margin: 0; padding: 0}
+#blog .nav, #forum .nav, #topic .nav {margin: 0 auto}
+.reg .sunbar, .reg .darkbar {text-align: center}
+.reg, .tag, .board .skin_tbl, .sidebox {margin: 0 auto 1.5em auto}
+.fast.send {margin: 1.5em 0 0 0} .fast.send.alternative .skin_tbl {width: 50%; min-width: 400px; text-align: center}
+.tag li, .side_tag li {text-align: left; padding: 2px}
+.summary {margin: 3em 0 0 0} .summary .list {height: auto !important; height: 400px; max-height: 400px; overflow: auto}
+.poll {margin: 1.5em 0} .poll .left {width: 60%; text-align: left} .poll .center {width: 20%; text-align: center} .poll .right {width: 14%; text-align: center}
+.side_poll .left {width: 70%; text-align: left} .side_poll .right {width: 22%; text-align: center}
+.bar, .bar span {position: relative; overflow-y: hidden} .bar div {position: absolute; top: 0; left: 0; height: 100%}
+.mdesc:before {content:', '}
+.post .center {vertical-align: top}
+.post .top .left {max-width: 200px} .post .center .left {max-width: 300px; min-width: 150px; padding: 0; text-align: center}
+.article .top .right em {font-style: normal}
+.post .when span, .post .who span, .summary .when span {font-weight: bold}
+div.rep_pos a, dl.rep_pos dd a {font-weight: bold; color: #080 !important} div.rep_neg a, dl.rep_neg dd a {font-weight: bold; color: #D22}
+.points {white-space: nowrap}
+.points em {font-size: 12px; font-weight: bold; font-style: normal}
+.points_pos {color: #080} .points_neg {color: #D22}
+.points img, .popup .close {cursor: pointer} .points .opacity {opacity: .6; cursor: default}
+#pop_profile {width: 380px; height: 150px} #pop_profile div {height: 130px; padding: 10px; overflow-y: auto}
+.popup {z-index: 100; display: none; width: 300px; border: 1px solid rgba(0,0,0,.2); box-shadow: 0 0 8px rgba(0,0,0,.3)}
+.popup .close {z-index: 100; position: absolute; left: 99%; width: 40px; height: 30px; margin: 0; padding: 0; border: 0; background: transparent url('https://img.forumfree.net/index_file/close2.png') no-repeat center; opacity: .8}
+.popup .close:hover {margin: 0; padding: 0; border: 0; opacity: 1}
+.popup > div {font-size: .9em; text-align: left; background: #FFF}
+.popup p {margin: 0; padding: 25px 0; text-align: center}
+.pop_points div {height: 100px; padding: 10px; overflow-y: auto} .popup .users {font-size: .9em}
+.quote_top a {padding: 0 10px; background: transparent url('https://img.forumfree.net/index_file/q.png') center no-repeat}
+.fancytop {margin: .5em; font-weight: bold; font-size: .8em; text-align: center} a.fancyborder {display: inline-block; max-width: 98%; min-width: 30%; margin: 0; padding: 4px} div.fancyborder {position: relative; width: 45%; margin: 0 auto; padding: 8px 2% 8px 4%; line-height: 200%; text-align: center} div.fancyborder img {position: absolute; top: 50%; left: 3%; margin-top:-8px}
+.post .bottomborder {width: 96px; height: 15px; margin: 0; clear: both}
+.ffmsign {font-size: smaller; font-style: italic} .ffmsign a {text-decoration: none; font-weight: normal} .quote .ffmsign {display: none}
+.note {background:rgba(0,0,0,0.6) none repeat scroll 0 0; color: #FFF; width:100%; line-height:32px; font-size:14px; box-shadow:0 0 5px rgba(0,0,0,0.2); padding:3px 0; left:0; top:0; position:fixed!important; position:absolute; z-index:100000; text-align:center; cursor:pointer}
+#search.posts .post {margin: 10px 0} #msg .big_list .on a {font-weight: bold !important}
+#markdiv {background: #F3F3F3; padding: 5px; margin: 10px} #markdiv .list-users {width: 95%; max-height: 150px; overflow-x:auto; white-space:nowrap; margin: 10px auto; overflow-y:hidden; vertical-align:middle; position:relative; padding: 5px} #markdiv .list-users div {cursor:pointer; display:inline-block; margin:auto 4px} #markdiv .list-users b {display:block; margin: 10px auto} #markdiv .markmax {color: #FFF; background: #DC2D2D; border-radius: 5px; padding: 5px; position:absolute; top: 5px; width: 50%; left: 50%; transform:translate(-50%, 0)} #markdiv img {height: 50px; width: 50px; border-radius: 100%} #markdiv mark {display:block; margin-top: 5px; max-width: 80px; text-overflow:ellipsis; word-break:inherit; overflow:hidden} #markdiv form {margin-bottom: 10px} #markdiv form input {margin:auto 4px} .color mark, #markdiv mark {cursor:pointer; background: #FFEB3B; padding: 3px; border-radius: 5px; font-weight: 700} .atwho-view {position:absolute; top: 0; left: 0; display:none; margin-top: 18px; background:white; color:black; border: 1px solid #DDD; border-radius: 3px; box-shadow: 0 0 5px rgba(0, 0, 0, .1); min-width: 120px; z-index: 9!important} .atwho-view .atwho-header {padding: 5px; margin: 5px; cursor:pointer; border-bottom:solid 1px #EAEFF1; color: #6F8092; font-size: 11px; font-weight: 700} .atwho-view .atwho-header .small {color: #6F8092; float:right; padding-top: 2px; margin-right: -5px; font-size: 12px; font-weight: 400} .atwho-view .atwho-header:hover {cursor:default} .atwho-view .cur {background: #36F; color:white} .atwho-view .cur small {color:white} .atwho-view strong {color: #36F} .atwho-view .cur strong {color:white} .atwho-view ul {list-style:none; padding: 0; margin:auto; max-height: 200px; overflow-y:auto} .atwho-view ul li {display:block; padding: 5px 10px; border-bottom: 1px solid #DDD; cursor:pointer; text-align:left} .atwho-view li img {width: 25px; height: 25px} .atwho-view small {font-size:smaller; color: #777; font-weight: 400} #msg .tagged {background-color: #FFEB3B1f} #msg .tagged.on {background-color: #FFEB3B63}.grecaptcha-badge{bottom:100px!important}
+img:not([width]):not([height])[src^="https://img.forumfree.net/html/emoticons/new"] {width: 20px; height: 20px}
+.forumfree-modal div[id^="emoticon-popup"] {max-width: 860px; vertical-align: top} .forumfree-modal div[id^="emoticon-popup"] img:not([data-src]) {max-width: 200px; cursor: pointer}  .forumfree-modal div[id^="emoticon-popup"] img {transition: transform .1s} .forumfree-modal div[id^="emoticon-popup"] img:hover {transform: scale(1.1)}
+.forumfree-modal div[id^="emoticon-popup"] ul {list-style: none; text-align: center; max-height: 300px; overflow: auto} .forumfree-modal div[id^="emoticon-popup"] li {display: inline-block; margin: 1em} .forumfree-modal[class*="emoticon-popup"] {background: none}
+.dice-roll {margin-top: .7em} .dice-roll summary {outline: none; cursor: pointer} .dice-roll dt {text-decoration: underline} .dice-roll dt em {font-style: normal} .dice-roll dd:not(:last-child):after {content: ' -'} .dice-time {font-size: .7em}
+.dice-roll .dice-low {color: indianred} .dice-roll .dice-medium {color: darkorange} .dice-roll .dice-high {color: mediumseagreen} .dice-roll .dice-highest {color: forestgreen} .dice-roll summary > span:before {content: '\1F3B2'}
+.youtube-frame {position: relative; width: 560px; padding-bottom: 315px} .youtube-embed {position: absolute; top: 0; left: 0; width: 560px; height: 315px}
+.answer-title {font-size: 2em; text-align: center; font-weight: bold; margin: 1em 0}
+.answer-info img {width: 30px; height: 30px; border-radius: 100%}
+.answer-info a {display: block}
+.answers td {padding-bottom: .5em}
+.answers .list li:not(.row-single-data) > div {width: 32%}
+.answers .list .row-single-data {width: 32%; display: inline-block}
+.answers .legend, .answers .row-mine {font-weight: bold}
+.answers .list li {padding: .4em}
+.answers .right .remove, .answers .right .answer-error {color: #f44435}
+.answers .right .answer-removed {color: #2896f3}
+.answers .right img {width: 15px}
+.answers .double-title {font-size: 1.2em; text-align: left; font-weight: bold}
+.answers .double-votes {border: none; margin-bottom: 1em}
+.answers .right.answer-remove > * > img {display: block; margin: auto}
+.answers .double-votes .answer-remove > * {width: 45%; display: inline-block}
+.answers .right.answer-remove > a:hover {transform: scale(1.2); display: inline-block}
+.answers .ban {color: #dea806}
+.double-votes summary {cursor: pointer; outline: none; user-select: none}
+.double-votes details[open] summary ~ * {animation: details .5s ease-in-out;}
+@keyframes details {0% {opacity: 0; margin-left: -15px} 100% {opacity: 1; margin-left: 0px}}
+.gsc-control-cse {background: transparent !important; border: 0 !important} table.gsc-search-box {width: 50% !important} .gs-result {text-align: left}
+.box_visitatore .u_title:before {content:''; background: url('https://img.forumfree.net/style_images/default_avatar.png'); margin: -6px 6px 12px; overflow: hidden; background-size: cover; border: 2px solid #128B86; width: 100px; display: inline-block; padding: 3px; border-radius: 50%; box-shadow: 0 0 5px #0009, inset 0 0 5px #000; height: 100px; max-width: 100px; background-position: center; background-repeat: no-repeat}
+#search.posts .skin_tbl {box-shadow: none; background: transparent}
+#search.posts .topic .post {margin: 10px 0; padding: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)}
+.title.bottom .track:before {font-family: fontawesome; content: "\f08d"}
+ .subscriptions .title.top {display:block !important}
+
+.details [src]{max-width:160px}
+kbd {display: inline-block; vertical-align: middle; -webkit-appearance: textfield; -moz-appearance: textfield; text-align: left; white-space: nowrap; overflow: hidden; height: 15px; padding: 2px 1px; border: 1px groove #A9A9A9; background-color: #FFF; color: #000; font: 13.3333px Arial} kbd[placeholder]:empty:after {display: block; content: attr(placeholder); opacity:.6} [rows] {white-space: pre-wrap; overflow-y: auto; resize: vertical; font-family: monospace}
+
+
+/* ------ START ------ */
+body {font: 76%/1.6em "Roboto", verdana, tahoma; background: #F1F1F1 !important; color: #585858; background-repeat: repeat}
+
+table.gsc-search-box {width: 100% !important}
+.gsc-control-cse {margin-top: -14px}
+
+.box_m461121 .st-emoji, .box_m461121 .st-emoji-profile-count, .box_m461121 .points {display: none}
+
+#board .desc {display: none}
+.hide {display:none}
+/* CAPPELLO SULL'AVATAR
+.box_gruppo1:not(.box_m461121) .details:before, .box_gruppo2 .details:before, .box_gruppo3 .details:before, .box_gruppo4 .details:before {content: '';
+ width: 70px; height: 70px; position: absolute; background: url(https://mod.forumfree.it/img/supporto/cappellonatale.png) center no-repeat}
+.box_gruppo1 .details:before, .box_gruppo2 .details:before, .box_gruppo3 .details:before, .box_gruppo4 .details:before {top: -15px; left: 10px}
+.box_m1823168 .details:before, .box_m11472989 .details:before {left: 45px}
+.box_m1440701 .details:before {transform: rotate(53deg); top: -19px; left: 45px} */
+
+/* CAPPELLO SULLA TARGHETTA
+.box_gruppo1 .u_rank, .box_gruppo2 .u_rank, .box_gruppo3 .u_rank, .box_gruppo4 .u_rank {position: relative}
+.box_gruppo1:not(.box_m461121) .u_rank:before, .box_gruppo2 .u_rank:before, .box_gruppo3 .u_rank:before, .box_gruppo4 .u_rank:before {content: url(https://mod.forumfree.it/img/supporto/santacornerhat.png); position: absolute; left: -13px; top: -14px} */
+
+/* EFFETTO NEVE
+@keyframes nevica {0% {background-position: 0 0, 0 0}
+100% {background-position: 600px 600px, 400px 400px}}
+@-webkit-keyframes nevica {0% {background-position: 0 0, 0 0}
+100% {background-position: 600px 600px, 400px 400px}}
+body:not(.mobile) .header_h, body:not(.mobile) #sub_header .neve, body:not(.mobile) .mback {position: relative; background-image: url(https://mod.forumfree.it/img/neve/set2_img1.png), url(https://mod.forumfree.it/img/neve/set2_img2.png); animation: nevica 0s linear infinite; -webkit-animation: nevica 30s linear infinite}
+#fireworks_canvas {width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 8} */
+
+.box_gruppo2.box_m7482873 .details .avatar {border-color: #D6AD1C}
+.box_gruppo2.box_m7482873 span.u_rank, .box_gruppo2.box_m7482873 #tab1 > dl:first-child img, .box_gruppo2.box_m7482873 #tab1 > dl:first-child .gruppo2 {filter: hue-rotate(-167deg) brightness(1.5)}
+.m7482873 .gruppo2:before {content: "\f188"}
+.m7482873 .gruppo2 {color: #D6AD1C}
+.box_gruppo2.box_m7482873 .u_posts {display:none}
+
+.quote-truncated > div {display: none}
+.quote-more {display: block;
+ /* text-align: center; */
+ margin: 1em;
+ /* font-weight: bold; */
+ cursor: pointer;
+ background: lightgrey;
+ padding: .4em;
+ border-radius: 5px; -moz-border-radius: 5px;
+ width: fit-content;
+ cursor: pointer;
+ font-style: italic}
+
+a {text-decoration: none; transition: all .5s}
+/* ------ glitter Kost messo dal Dinamico Duo ------
+a[href*="?act=Profile&MID=461121"] {color: orangered !important;
+ font-weight: bold; padding: 4px;
+ text-shadow: 0 0 7px;
+ background-image: url(https://upload.forumfree.net/i/ff931526/sdh1zs.jpg);
+ text-decoration: blink}
+ */
+
+/* FFLS */
+.f64973852 .lastarticles {display: none}
+.board #f64973852 .bb {width: 100% !important; padding: 2em 0; text-align: center}
+.board #f64973852 .bb a {display: block; width: 100%}
+.board #f64973852 .yy, .board #f64973852 .aa, .board #f64973852 .zz {display: none}
+
+.post.box_gruppo1 .u_rank img, .post.box_gruppo2 .u_rank img, .group .right img, .profile #tab1 img, #members .bb img {max-width: 110px}
+.post .u_rank img {max-width: 110px}
+
+/* colore diverso per tag code */
+.code_top b, .code_top::after, .code_top::before {color: #F08080 !important}
+.spoiler .code_top b, .spoiler .code_top::before {color: rgb(85, 85, 85) !important}
+
+
+/*Messaggio per far linkare il forum nelle sezioni di supporto*/
+body#send.supportsection.it .main_list li:nth-child(6) .list li:nth-child(2):before {content:'ATTENZIONE: ricorda di allegare il link del sito per cui richiedi assistenza e cerca di fornire più dettagli possibili del tuo problema.'; padding: 5px; margin: 5px; display:block; background: #58A72E; border-radius: 10px; -moz-border-radius: 10px; color: #FFF; font-size: 13px; letter-spacing: 1px}
+
+.f64923130 .web i, #f64923130 .where i, .f64923130 .mtitle h1 i {font-family: monospace; font-style: normal; letter-spacing: 1px; text-transform: uppercase; color: #000; background: #E7E4E4; padding: 3px; border-radius: 5px; -moz-border-radius: 5px}
+
+.color *::selection {background: yellow}
+.f26622 .tmb {height: 100%!important; width:auto}
+#search.posts .skin_tbl {box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; background: transparent}
+#search.posts .topic .post {margin: 10px 0; padding: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)}
+.points .points_down {display: none}
+
+@keyframes animated_note {0% {left: -800px} 20% {left: 0} 75% {left: 0} 100% {left: 800px}}
+.note {background: none; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; line-height: 34px; top: 5px; animation: 5s animated_note}
+.note span {display: inline-block; line-height: 20px; padding: 3px 10px; border-radius: 5px; -moz-border-radius: 5px; background: #FFF; font-weight: bold}
+
+.nav {font-weight: bold; letter-spacing: .05em}
+.nav a {color: #535353; border-bottom: 1px dotted transparent}
+.nav a:hover {border-color: #535353; color: #535353}
+.nav .fa {font-size: 12px; color: #A5A5A5}
+
+.footer {margin: 15px auto; font-size: 11px; color: #999}
+#reg .lastarticles, #login .lastarticles, #user .lastarticles, #cp .lastarticles, #msg .lastarticles, #send .lastarticles, #topic .lastarticles, #search .lastarticles {display: none}
+.lastarticles > div {display: inline-block; width: 100%; vertical-align: top; height: 48px; overflow: hidden; background: #F8F8F8; margin: 0 0 20px 0; border-radius: 2px; -moz-border-radius: 2px; box-shadow: 0 0 5px rgba(0, 0, 0, .1); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .1); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .1)}
+.lastarticles .left, .lastarticles .right, .lastarticles .center {display: inline-block; height: 48px; overflow: hidden}
+.lastarticles .left, .lastarticles .right {width: 10%; transition: all .5s; line-height: 48px; vertical-align: top}
+.lastarticles .left.c_c {background: #2E99E1}
+.lastarticles .left.c_f {background: #58A72E}
+.lastarticles .left.c_b {background: #E67F22}
+.lastarticles .right a {color: #B6B6B6; font-size: 20px; cursor: pointer; margin: 0 4px}
+.lastarticles .right a:last-child {margin-right: 10px}
+.lastarticles .right {text-align: right}
+.lastarticles .right a:hover {opacity: .6}
+.lastarticles .center {width: 80%; background: #F8F8F8}
+.lastarticles .center .topic {background: #F8F8F8}
+.lastarticles .center .slider_main {transition: all .5s; margin-left: 10px}
+.lastarticles .thumbs a * {border-radius: 100%; -moz-border-radius: 100%; height: 26px; object-fit: cover}
+.lastarticles .topic {border-radius: 2px; -moz-border-radius: 2px; transition: all .5s; height: 48px; overflow: hidden; line-height: 48px; text-align: left}
+.lastarticles .thumbs {float: none !important; display: inline-block}
+.lastarticles .topic > span br {display: none}
+.lastarticles .topic > span {margin-left: 5px}
+.lastarticles .topic > a {max-width: 70%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; vertical-align: middle; padding-bottom: 2px}
+.lastarticles .topic > span a {max-width: 140px; padding-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; vertical-align: middle}
+.lastarticles .topic a:hover {color: #535353}
+.lastarticles .topic:hover > a, .lastarticles .topic:hover > span a {opacity: .6}
+.lastarticles .topic > .thumbs a {width: 25px !important; height: 25px !important}
+.lastarticles .left > a {display: none; padding-top: 10px}
+.lastarticles .c_c .c_l {display: block}
+.lastarticles .c_f .f_l {display: block}
+.lastarticles .c_b .b_l {display: block}
+
+#f1, #f9961831, #f4, #f3, #f1102038, #f377076, #f4, #f64956959 {width: 50% !important; display: inline-block; background-color: transparent; box-sizing: border-box; min-height: 80px; vertical-align: top}
+#f1102038, #f377076 {background-color: #F3F3F3}
+#f1, #f4, #f1102038 {box-shadow: inset 4px 4px #F9F9F9, inset -2px -4px #F9F9F9; -moz-box-shadow: inset 4px 4px #F9F9F9, inset -2px -4px #F9F9F9; -webkit-box-shadow: inset 4px 4px #F9F9F9, inset -2px -4px #F9F9F9}
+#f9961831, #f3, #f377076 {box-shadow: inset 2px 4px #F9F9F9, inset -4px -4px #F9F9F9; -moz-box-shadow: inset 2px 4px #F9F9F9, inset -4px -4px #F9F9F9; -webkit-box-shadow: inset 2px 4px #F9F9F9, inset -4px -4px #F9F9F9}
+#f1 .aa, #f9961831 .aa, #f4 .aa, #f3 .aa, #f1102038 .aa, #f377076 .aa, #f4 .aa, #f64956959 .aa {width: 13%; position: relative; top: 15px}
+#f3 .aa {top: 5px}
+#f1 .bb, #f9961831 .bb, #f4 .bb, #f3 .bb, #f1102038 .bb, #f377076 .bb, #f4 .bb, #f64956959 .bb {width: 83% !important; position: relative; top: 5px}
+#f64956959 .bb {top: 15px !important}
+#f1 .zz, #f9961831 .zz, #f1102038 .zz, #f377076 .zz, #f4 .zz {width: 83%; text-align: left !important; margin-left: 14%; position: relative; top: -5px}
+@media screen and (max-width: 600px) {.zz {margin-left: 0 !important}}
+#f1 .zz div, #f9961831 .zz div, #f1102038 .zz div, #f377076 .zz div, #f4 .zz div, #f64956959 .zz div {display: inline-block; padding: 0 3px}
+#f1 .where a, #f9961831 .where a, #f1 .who a, #f9961831 .who a, #f1102038 .where a, #f377076 .where a, #f1102038 .who a, #f377076 .who a, #f4 .where a, #f64956959 .where a, #f4 .who a, #f64956959 .who a {text-overflow: ellipsis; display: inline-block; white-space: nowrap; overflow: hidden; max-width: 150px !important; vertical-align: bottom}
+#f1 .who a, #f9961831 .who a, #f1102038 .who a, #f377076 .who a {max-width: 90px !important}
+#f1 .yy, #f9961831 .yy, #f4 .yy, #f3 .yy, #f3 .zz, #f3 .topic > span br, #f1102038 .yy, #f377076 .yy, #f4 .yy, #f64956959 .yy {display: none}
+#f3 .topic > span {display: block; margin-bottom: 20px}
+
+.f26622 .big_list > li {width: 30%; display: inline-block; text-align: center; border-radius: 20px; -moz-border-radius: 20px; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; margin: 10px; background: #F3F3F3}
+.f26622 .big_list > li .aa, .f26622 .big_list > li .xx, .f26622 .big_list > li .yy, .f26622 .big_list > li .zz>*:not(input), .f26622 .title.top {display: none !important}
+.f26622 .big_list > li .zz input {position:absolute !important; top: 10px; left: 250px}
+.f26622 .big_list > li .zz {position:unset}
+.f26622 .big_list > li {position:relative}
+.f26622 .big_list > li:hover {background: #0288D1}
+.f26622 .big_list > li:hover * {color: #FFF !important}
+.f26622 .big_list > li {height: 150px; vertical-align: top; padding: 5px} .f26622 .big_list > li * {text-align: center}
+.f26622 .big_list > li .bb {width: 100%}
+.f26622 .big_list > li img {max-width: 150px; max-height: 120px}
+.f26622 a > .fa {font-size: 12px}
+.f26622 .pages2 {display: none !important}
+
+.f26622 .big_list .web {max-width: 190px;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ display: inline-block}
+.a_desc {background: #EEEEEE none repeat scroll 0 0;
+ border: 3px solid #E5E5E5;
+ border-radius: 10px; -moz-border-radius: 10px;
+ display: inline-block;
+ height: 110px;
+ overflow: hidden;
+ width: 230px}
+.tmb, .a_desc img {height: auto;
+ margin: 0 !important;
+ width: 100%}
+
+.f1.first .post:first-child .left, .f377076.first .post:first-child .left, .f1.first .signature, .f1.first .bottomborder, .f1.first .bottomborder+br {display: none}
+
+#f7210038, #f6285972 {width: 50%; display: inline-block; min-height: 60px} #f7210038 .yy, #f6285972 .yy, #f7210038 .zz, #f6285972 .zz {display: none}
+#f7210038 .aa, #f6285972 .aa {width: 10%; vertical-align: bottom; height: 100%} #f7210038 .bb, #f6285972 .bb {width: 85% !important}
+
+.f26622 .big_list .web {max-width: 190px;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ display: inline-block}
+.a_desc {background: #EEEEEE none repeat scroll 0 0;
+ border: 3px solid #E5E5E5;
+ border-radius: 10px; -moz-border-radius: 10px;
+ display: inline-block;
+ height: 110px;
+ overflow: hidden;
+ width: 230px}
+.tmb, .a_desc img {height: auto;
+ margin: 0 !important;
+ width: 100%}
+
+.header_h {color: #FFF; margin-top: -44px; height: 129px; box-shadow: 0 0 5px rgba(0, 0, 0, .2); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .2); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .2)}
+.logo_h {text-align: center; padding: 2px 20px 9px 20px; margin: 0 23px; font-size: 0; color: transparent; position: relative; top: 41px}
+.logo_h a span {display: block; min-height: 60px; background-size: contain; background-repeat: no-repeat; background-position: center center}
+.logo_h a span {background-image: url(https://nb.forumfree.it/supporto/loghi/logofs.png)}
+/*logo lab*/
+.logo_h a span.skinlab, body.f2 .logo_h a span {background-image: url(https://nb.forumfree.it/supporto/loghi/logofl.png)}
+
+#c64925626 {display: none}
+
+/* Pulsanti sotto logo */
+#sub_header {padding: 0; margin: 0 0 20px 0; list-style-type: none}
+#sub_header > li {display: inline-block; transition: all .2s linear}
+#sub_header > li {margin-top: 10px}
+@media screen and (min-width: 800px) {#sub_header > li {margin-top: 0}
+#sub_header > li:not(:first-child) {margin-left: 30px}}
+#sub_header > li > a {color: #FFF; font-size: 15px; padding: 5px 15px; display: block}
+
+/* MENU principale */
+@keyframes menudown {from {opacity: 0}
+to {opacity: 1}}
+@-webkit-keyframes menudown {from {opacity: 0}
+to {opacity: 1}}
+.menu > a {font-size: 0 !important; color: transparent !important}
+.menu a > *:first-child, .menu em {vertical-align:middle}
+.menu.st-emoji-notice.st-emoji-notice-desktop > a::before {content:"\f118"; display:inline-block; font:normal normal normal 13px fontawesome; padding-right: 5px; vertical-align:middle} .menu.st-emoji-notice.st-emoji-notice-desktop > a {vertical-align:middle}
+.menu.st-emoji-notice.st-emoji-notice-desktop > a::before, .menu > a .fa {font-size: initial!important; color: #FFF!important}
+.menu > a span {background-size: 13px !important; transition: all .2s}
+.menu:hover > a span {background-size: 16px !important}
+.menuwrap .nick {font-size: 13px !important; color: #FFF !important}
+.menu em {font-size: 13px !important; color: #535353 !important}
+@media screen and (min-width: 1024px) {.menu > a, .menu.st-emoji-notice.st-emoji-notice-desktop > a::before {font-size: 13px !important; color: #FFF !important}}
+.menu ul {opacity: 0}
+.menu:hover ul {-webkit-animation: menudown .3s; -webkit-animation-iteration-count: 1; -webkit-animation-fill-mode: forwards; -webkit-animation-timing-function: linear; animation: menudown .3s; animation-iteration-count: 1; animation-fill-mode: forwards; animation-timing-function: linear}
+.menuwrap li {line-height: 3.6em; color: #FFF}
+.menuwrap a {margin: 0; padding: 0 11px; font-size: 10pt; color: #FFF}
+.menuwrap a:hover {color: #FFF; border: 0}
+.menuwrap .icon a {padding: 0 6px}
+#m_up a {padding: 0 11px 0 0}
+#c_up {position: absolute; right: 10px; bottom: 10px; opacity: .5}
+#c_up .fa {font-size: 20px}
+#f_up {position: fixed; bottom: 20px; right: 1%; opacity: .9}
+#f_up .fa {font-size: 30px}
+.p_up:hover, #c_up:hover, #f_up:hover {opacity: 1; text-decoration: none; border: 0}
+.menuwrap b {color: #7B7B7B}
+.menu:first-child li b {color: #AA3232}
+.menuwrap em {padding: 2px 5px; color: #535353; text-shadow: none; background: #FFF; border-radius: 6px; -moz-border-radius: 6px}
+.menuwrap .avatar {width: 30px; height: 30px; transform: scale(0.8); -ms-transform: scale(0.8); -webkit-transform: scale(0.8); border-radius: 100%; -moz-border-radius: 100%; border: 2px solid #FFF; background: #FFF; transition: all .5s}
+.menuwrap .menu:hover .avatar {transform: scale(1); -ms-transform: scale(1); -webkit-transform: scale(1)}
+.menuwrap .nick {margin-left: .6em}
+.menuwrap form {padding: 0 11px 0 5px}
+.menu ul {width: 15em; background: #FFF; box-shadow: 0 0 3px rgba(0, 0, 0, .2); -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .2); -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .2); border-radius: 5px; -moz-border-radius: 5px}
+.right .menu ul {margin-left: -2em}
+.menuwrap .left .menu > ul {margin-left: 10px !important}
+.menu li {padding: 3px 0; line-height: 1.4em; text-shadow: none}
+.menu li strong {padding: 3px 8px; color: #333333}
+.menu li a {padding: 3px 8px !important; margin: 0 4px; font-size: 10pt; color: #3D3D3D !important}
+.menu li a:hover, .menu li:hover > a {background: #F3F3F3; border-radius: 4px; -moz-border-radius: 4px; color: #7B7B7B !important}
+.submenu ul:before {content: " "; width: 12px; height: 100%; position: absolute; background: transparent; top: 0; left: -8px}
+.submenu ul {border-radius: 5px; -moz-border-radius: 5px}
+.submenu.alternative li:first-child {padding: 3px 4px; border-top: 0}
+.menuwrap label, .menuwrap form a {padding: 0; font-size: 10px}
+.menuwrap label:hover {color: #FFF}
+.menuwrap input {padding: 3px; font: 11px verdana, arial, sans-serif; color: #000; border-radius: 4px; -moz-border-radius: 4px}
+.menuwrap input:hover {cursor: pointer}
+.menuwrap input:focus {cursor: default}
+.menuwrap input[type=submit] {padding: 2px; color: #FFF; font-weight: bold; border-radius: 4px; -moz-border-radius: 4px; background: #535353}
+.menuwrap input[type=submit]:hover {color: #FFF; background: #6C6C6C}
+.menuwrap input {padding-right: 20px; color: rgba(0, 0, 0, .4); border: none; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; background: rgba(255, 255, 255, .5); transition: all .5s}
+.menuwrap input:focus {color: #3D3D3D; background-color: #FFF}
+.menuwrap .search input {width: 80px}
+.menuwrap .search input:focus {width: 120px}
+
+/* LARGHEZZA BOARD */
+.container {margin: 10px auto; padding: 10px}
+.container, .tabs.top, .tabs.bottom {max-width: 960px}
+
+/* TABS */
+.tabs li {vertical-align: bottom; margin-left: 5px}
+.tabs li:first-child {margin: 0}
+.tabs.no_rotate li {margin: 0; margin-top: 5px}
+.tabs.no_rotate.alternative li {margin-top: 10px}
+.tabs a {display: block; margin: 0; padding: 2px 10px; text-decoration: none; font-weight: bold; color: #FFF; box-shadow: 0 0 5px rgba(0, 0, 0, .1); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .1); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .1); border-radius: 2px; -moz-border-radius: 2px}
+.tabs a:hover, .tabs .current a {opacity: .6; color: #FFF}
+.tabs.top {text-align: right; position: relative; top: 30px}
+.tabs.bottom {text-align: right; position: relative; bottom: 31px}
+.tabs.rotate {height: 24px; padding: 0 105px}
+.tabs.left.rotate {left: -24px}
+.tabs.no_rotate {padding: 130px 0}
+
+/* HOMEPAGE */
+.skin_tbl {background: #F9F9F9; margin-bottom: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, .1); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .1); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .1); border-radius: 2px; -moz-border-radius: 2px}
+.mback {line-height: 30px; border-radius: 2px 2px 0 0; -moz-border-radius: 2px 2px 0 0}
+.mback_right {width: 5%}
+.mback_left, .topic .mback_right {display: none}
+.minus, .plus, .board .aa {display:inline-block; transition: all .5s; font:normal normal normal 14px/1 FontAwesome; font-size:inherit; text-rendering:auto; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; transform:translate(0, 0); color: rgba(255, 255, 255, .5)}
+.minus:before {content:'\f068'}
+.plus:before {content:'\f067'}
+.minus, .plus {opacity: 0}
+.board .where a {max-width: 190px; vertical-align: middle; margin-top: -2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block}
+.board .aa:before {content: '\f069'; color: #C0C0C0; font-size: 2.5em}
+.board #f194 .aa:before {content: "\f0ad"}
+.board #f911 .aa:before {content: "\f132"}
+.board #f1 .aa:before {content: "\f1cd"}
+.board #f9961831 .aa:before, .board #f64923130 .aa:before {content: "\f121"}
+.board #f9960122 .aa:before {content: "\f12e"}
+.board #f9368261 .aa:before {content: "\f080"}
+
+.board #f77634 .aa:before {content: "\f0e3"}
+.board #f766262 .aa:before, .board #f64929451 .aa:before {content: "\f188"}
+body.f766262 .board .big_list > li .aa:before {content: "\f1f8"}
+.board #f9407012 .aa:before {content: "\f0fc"}
+.board #f26622 .aa:before {content: "\f005"}
+.board #f64968846 .aa:before {content: "\f1c9"}
+.board #f7210038 .aa:before, .board #f6285972 .aa:before, body.f7210038 .board .big_list > li, .board #f961 .aa:before, .board #f6152292 .aa:before {content: "\f091"}
+
+.board #f2 .aa:before, .board #f64980063 .aa:before {content: "\f1fc"}
+.board #f3 .aa:before, .board #f11445877 .aa:before {content: "\f086"}
+
+#board .board .bb {width: 39%}
+#board .board .yy {width: 25%}
+
+.mback:hover .minus, .mback:hover .plus {opacity: 1}
+.mback a {color: #FFF !important} .mback a:hover {opacity: .8}
+.mtitle {text-align: left; font-weight: bold; padding: 5px 10px; font-size: 13pt; font-weight: normal; color: #FFF; background: transparent !important}
+.title, .darkbar {background: #FFF !important; font-weight: bold; font-size: 10px}
+.board .title, .forum .title.top {display: none}
+.list > *, table.mainbg tr, .profile .skin_tbl {background: #F3F3F3}
+.list > *:nth-child(even), table.mainbg tr:nth-child(even) {background: #F9F9F9}
+.big_list > * {background: #F3F3F3; box-shadow: inset 4px 0 0 #DDD; -moz-box-shadow: inset 4px 0 0 #DDD; -webkit-box-shadow: inset 4px 0 0 #DDD}
+.big_list > *:nth-child(even) {background: #F9F9F9; box-shadow: inset 4px 0 0 #F3F3F3; -moz-box-shadow: inset 4px 0 0 #F3F3F3; -webkit-box-shadow: inset 4px 0 0 #F3F3F3}
+.board .off .aa, .board .off img {opacity: .8}
+.board .off:hover .aa, .board .off:hover img {opacity: 1}
+.yy > div {display: inline-block; width: 50%; text-align: center; color: #767676; font-size: 9pt}
+#board .yy > div {width: 33%}
+.yy > div > em {display: block; font-size: 12pt; color: #535353}
+.yy span {display: inline-block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+.zz a {font-size: 10pt}
+.big_list .zz a {font-weight:bold}
+.zz.mini_buttons a {margin-top: 2px; margin-bottom: 2px}
+.big_list .aa > .fa {font-size: 15px; color: #888}
+.big_list .chiusa .aa > .fa {color: #CDCDCD}
+.annuncio .aa > .fa {font-size: 20px !important; color: #C067D3}
+.importante .aa > .fa {font-size: 20px !important; color: #E8CB45}
+.big_list .off.calda .aa .fa {color: rgba(217, 75, 75, .7)}
+.big_list .spostata .aa .fa {color: #E0E0E0}
+.big_list .on .bb .new_post {color: #E84545}
+.big_list .off.sondaggio .aa > .fa {color: #60B6DC}
+.mods, .subs {color: #848484}
+.mods a, .subs a {font-style: italic}
+.web {font-size: 12pt; font-weight: bold}
+.desc {font-weight: normal}
+.when {color: #969696}
+.where i {font-size: 10pt; color: #535353}
+.forum .title.top .yy {text-align: left}
+.views {white-space: nowrap}
+
+/* SELEZIONE RIGA */
+.focus {box-shadow: inset 4px 0 0 rgba(0, 0, 0, .05) !important; -moz-box-shadow: inset 4px 0 0 rgba(0, 0, 0, .05) !important; -webkit-box-shadow: inset 4px 0 0 rgba(0, 0, 0, .05) !important}
+.cp .focus *, .forum .focus * {color: #FFF !important}
+
+/* PANNELLO DI CONTROLLO */
+.cp .sunbar.top {border-radius: 2px 2px 0 0; -moz-border-radius: 2px 2px 0 0}
+.cp .tabs {text-align: left; margin-bottom: 10px}
+.cp .tabs .current a {font-size: 13px; font-weight: bold; color: #FFF; border: 0}
+.tabs2 div {transition: all .2s}
+.tabs2 div:hover {background: #E0E0E0}
+.tabs2 .current div {background: #E0E0E0 !important}
+#msg .cp .sunbar, #user .cp .sunbar, #send .send .sunbar {padding-left: 2%; padding-right: 2%; text-align: right}
+#msg .cp .web {font: 14px verdana}
+
+/* RISPOSTA */
+.fast.send .sunbar {font-weight: bold; font-size: 11px; text-shadow: none}
+.sunbar {text-align: center; font-size: 13px; font-weight: bold; color: #535353; background: #FFF !important}
+.summary .skin_tbl {border: 0}
+.summary .top {padding: 3px 0}
+.summary .list > *:first-child {border: 0}
+.summary .list {font-size: 11px}
+.summary .quote, .summary .code {font-size: 10px}
+.summary .sunbar.top {border-radius: 2px 2px 0 0; -moz-border-radius: 2px 2px 0 0}
+.summary .sunbar.bottom {border-radius: 0 0 2px 2px; -moz-border-radius: 0 0 2px 2px}
+.send .codebuttons {transition: all .2s}
+.send .codebuttons:hover {background: #70C6EC; color: #FFF}
+
+/* SONDAGGI */
+.bar {background: #E0E0E0; height: 15px; line-height: 15px; font-size: 10px; border-radius: 3px; -moz-border-radius: 3px}
+.bar div {background: #AADDF4; border-radius: 3px 0 0 3px; -moz-border-radius: 3px 0 0 3px}
+.max .bar {background: #E0E0E0; color: #535353}
+.max .bar div {background: #70C6EC}
+
+/* DISCUSSIONI */
+.topic .mtitle {font-weight: bold} .topic .mdesc {font-weight: normal}
+.topic .title.top {display: none}
+.topic .title.bottom .left:before, .topic .title.bottom .left .views:before, .topic .title.bottom .right> a:before, .topic .title.bottom .right> span a:before {font-family: fontawesome; font-size: 8pt; font-weight: normal; margin-right: 2px}
+.topic .title.bottom .similar:before {content: "\f00e"}
+.topic .title.bottom .print:before {content: "\f02f"}
+.topic .title.bottom .track:before {content: "\f08d"}
+.topic .title.bottom .right> span a:before {content: "\f1e0"}
+.topic .title.bottom .left:before {content: "\f075"}
+.topic .title.bottom .left .views:before {content: "\f0c0"}
+.post {background: #F9F9F9}
+.post.focus {background: #F9F9F9 !important; opacity: .6; box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important}
+.post.focus .title2 {background: rgba(0, 0, 0, .05)}
+.post .title2.top {background: #EAEAEA; transition: all 2s}
+.post .title2.bottom {background: #F3F3F3}
+.post .title2.top .lt a, .post .title2.top .when {color: #535353; font-size: 9pt; transition: all .5s}
+.post .title2.top .lt a:hover, .post .title2.top .when:hover {opacity: .8}
+.post .center .left, .post .center .right {padding: 10px}
+.post .bottom {font-size: 11px}
+.box_visitatore .nick {color: #535353 !important}
+.color {font-size: 14px; line-height: 1.8em}
+.color hr {height: 0; border: 0; border-top: 1px dashed #A9C7AF}
+.edit {font-size: 10px; color: #BBB; color: rgba(0, 0, 0, .25)}
+.fancyborder {border: 1px dotted #CBC8B9 !important; background: #F6F6F2}
+.bottomborder {border-bottom: 1px dashed #A9C7AF}
+.post .nick {text-align: center; white-space: normal; word-wrap: break-word; font-weight: bold; font-size: 15px; color: #888; color: rgba(0, 0, 0, .45)}
+.post .details {position: relative}
+.post .avatar {overflow: hidden; border-radius: 100%; -moz-border-radius: 100%; margin: 6px auto; background: #EEEEEE; width: 100px; height: 100px; border: 3px solid #E5E5E5}
+.avatar img {width: 100%}
+/*.post .u_posts dt, .post .u_reputation dt, .post .u_group, .post .u_title, .post .details p br, .side_profile .u_posts dt, .side_profile .u_reputation dt, .side_profile .u_group, .side_profile .u_title, .side_profile .details p br, .st-emoji-profile-count dt {display: none} */
+.post .u_group, .post .u_posts dt, .post .u_reputation dt, .side_profile .u_posts dt, .side_profile .u_reputation dt, .st-emoji-profile-count dt {display: none}
+.st-emoji-profile-count dd:before {content: '\f118'; font-family: fontawesome; margin-right: 3px; color: #9E9E9E}
+.post .u_posts, .post .u_reputation, .side_profile .u_posts, .side_profile .u_reputation {color: #696969}
+.post .u_posts dd:before, .side_profile .u_posts dd:before {content: '\f075'; font-family: fontawesome; margin-right: 3px; color: #9E9E9E}
+.post .u_reputation dd:before, .side_profile .u_reputation dd:before {content: '\f164'; font-family: fontawesome; margin-right: 3px; color: #9E9E9E}
+.post .u_posts, .post .u_reputation, .side_profile .u_posts, .side_profile .u_reputation {display: inline; margin: 7px}
+.post .mini_buttons a {padding: 5px !important; line-height: 2.5em}
+.post .points_pos {background-color: #82C160; color: #FFF}
+.post .points_neg {background-color: #DD3E3E; color: #FFF}
+.post .mini_buttons.points a {background: none !important}
+.post .mini_buttons.points a:hover {opacity: 1}
+.post .mini_buttons.points span {font-size: 11px}
+.post .points_up:not(.opacity):hover, .pop_points .points_up {color: #82C160}
+.post .points_down:not(.opacity):hover .fa, .pop_points .points_down {color: #DD3E3E}
+.post .points a, .post .points a:hover {background: none}
+.post .points em {padding: 2px; border-radius: 4px; -moz-border-radius: 4px; transition: all .5s}
+.post .points em:hover {opacity: .7}
+.post_neg .title2.top {background-color: #FDEBEB !important}
+.post_neg .top .mini_buttons a {background-color: rgba(223, 6, 6, 0.1); color: #B63B3B}
+.post_neg .top .mini_buttons a:hover {background-color: rgba(223, 6, 6, 0.1); color: #B63B3B; opacity: .5}
+.post_neg .top .mini_buttons {color: #B63B3B}
+.post_pos .title2.top {background-color: #E4F7E0 !important}
+.post_pos .top .mini_buttons a {background-color: rgba(123, 206, 106, .3); color: #4A863D}
+.post_pos .top .mini_buttons a:hover {background-color: rgba(123, 206, 106, .3); color: #4A863D; opacity: .5}
+.post_pos .top .mini_buttons {color: #4A863D}
+
+/*.box_gruppo1 .points, .box_gruppo2 .points, .box_gruppo1 .u_reputation, .box_gruppo2 .u_reputation {display: none} */
+
+/* STATO */
+.u_status {position: absolute; top: 10px; right: 10px; font-size: 0 !important; color: transparent; border-radius: 100%; -moz-border-radius: 100%; width: 10px; height: 10px; border: 3px solid #E5E5E5}
+.u_status dt, .br_status {display: none}
+.box_online .u_status {background: #7CD554}
+.box_offline .u_status {background: #E22D2D}
+.box_anonimo .u_status {background: #464646}
+
+/* CITAZIONI, SPOILER E CODICI */
+.quote, .code {padding: 5px; font-size: 9pt; font-weight: normal; color: #4D4D4D; background: #EAEAEA; border-radius: 5px; -moz-border-radius: 5px}
+.quote .quote, .quote .code, .spoiler .quote, .code .code {color: #696969; background: #F6F6F6}
+.quote .quote .quote, .quote .quote .code,
+.spoiler .quote .quote, .spoiler .quote .code,
+.quote .spoiler .quote, .quote .code .code {color: #4D4D4D; background: #EAEAEA}
+.quote .quote .quote .quote, .quote .quote .quote .code,
+.spoiler .quote .quote .quote, .spoiler .quote .quote .code,
+.quote .spoiler .quote .quote, .quote .spoiler .quote .code,
+.quote .quote .spoiler .quote, .quote .quote .code .code,
+.quote .quote .quote .code {color: #696969; background: #F6F6F6}
+.quote_top, .code_top {font-size: 11px; color: #555; margin: 1em}
+.quote_top:before, .spoiler .code_top:before {color: #929292; content:'“'; position: relative; top: 10px; margin-right: 5px; font-size: 30px; font-family: 'Times New Roman'; font-weight: bold}
+.code_top:before {color: #929292; content:'<!'; position: relative; top: 1px; margin-right: 5px; font-size: 16px; font-family: arial; font-weight: bold}
+.code_top:after {color: #929292; content:'>'; position: relative; top: 1px; margin-left: 6px; font-size: 17px; font-family: arial; font-weight: bold}
+.spoiler .code_top:after {content: none}
+
+/* BLOG */
+.blog .skin_tbl {background: transparent; border: 0}
+
+#centerdiv {margin: 0 215px} .sidebar {width: 190px; font-size: 11px}
+.blog .skin_tbl {box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none}
+.blog .article {background: #FFF; border-radius: 2px; -moz-border-radius: 2px; box-shadow: 0 4px 11px rgba(0, 0, 0, 0.09); -moz-box-shadow: 0 4px 11px rgba(0, 0, 0, 0.09); -webkit-box-shadow: 0 4px 11px rgba(0, 0, 0, 0.09); padding: 20px; margin: 20px 0 10px}
+.btitle {line-height: 1.8em}
+.btitle a {font-size: 24px; color: #262627; border-bottom: 1px dotted transparent}
+.bdesc {margin-top: 15px; font-size: 16px; color: #888}
+.on .btitle {font-weight: bold}
+.article .title2 {font-size: 10px; color: #888}
+.article .title2 a {font-weight: bold; color: #535353}
+.article .color h2 {background: #EEE; padding: 3px; border-radius: 4px; -moz-border-radius: 4px; text-align: center; font-weight: bold; color: #444}
+.tags, .tags a:link, .tags a:visited {font-size: 10px; font-weight: normal; color: #7BE}
+.color .tags {font-size: 11px}
+.article.focus {background: #F9F9F9 !important; opacity: .6; box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important}
+.article .title2.top {position: relative}
+.blog .article .title2.top .right {margin-left: 15px}
+.article .top .avatar {display: none}
+.article .top .who span, .article .top .replies span, .article .top .views span, .article .top .when > span:first-child {display: none !important}
+.article .top .who, .article .top .when, .article .top .right, .article .top .tags {font-size: 13px; color: #9B9B9B}
+.article .top .who a, .article .top .right a, .article .top .tags a {color: #9B9B9B; border-bottom: 1px dotted transparent; font-weight: normal}
+.article.post_neg .top .right {color: #FE8E8E}
+.article.post_neg .top .right a {color: #FE8E8E}
+.article.post_pos .top .right {color: #99D385}
+.article.post_pos .top .right a {color: #99D385}
+.article .title2.top {background: transparent !important}
+.article .title2.top .right {background-color: #F3F3F3 !important; padding: 5px; border-radius: 4px; -moz-border-radius: 4px}
+#blog .points_up > span {display: none}
+.article.post_neg .title2.top .right {background-color: #FDEBEB !important; padding: 5px; border-radius: 4px; -moz-border-radius: 4px}
+.article.post_pos .title2.top .right {background-color: #E4F7E0 !important; padding: 5px; border-radius: 4px; -moz-border-radius: 4px}
+.article .points_pos {background-color: #82C160; color: #FFF; padding: 2px; border-radius: 4px; -moz-border-radius: 4px}
+.article .points_neg {background-color: #DD3E3E; color: #FFF; padding: 2px; border-radius: 4px; -moz-border-radius: 4px}
+.article .points_pos:hover, .article .points_neg:hover {border: none}
+.article .top .who a:hover, .article .top .right a:hover, .article .top .tags a:hover {color: #535353; border-color: #535353}
+.article .top .who a {max-width: 180px; margin-top: -1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; vertical-align: middle}
+.article .top .who a:before {content: "\f007"; font-family: fontawesome; margin-right: 5px}
+.article .top .when:before {content: "\f073"; font-family: fontawesome; margin-left: 15px}
+.article .top .replies a:before {content: "\f075"; font-family: fontawesome; margin-left: 5px; margin-right: 5px}
+.article .top .views:before {content: "\f0c0"; font-family: fontawesome; margin-left: 5px; margin-right: 5px}
+.article .top .tags dt:before {content: "\f02c"; font-family: fontawesome; margin-right: 5px}
+.article .top .tags {display: inline-block; margin-right: 5px}
+.article .top .tags dd {display: none}
+.article .top .tags dt:after {content: none}
+.article .top .tags dt {cursor: pointer; font-weight: normal; border-bottom: 1px dotted transparent}
+.article .top .tags dt:hover {color: #535353; border-color: #535353}
+.article .title2 .right a {border: none !important}
+.article .color {margin: 5px 0 20px; text-align: justify; line-height: 1.75em; font-size: 15px}
+.article .color .edit {color: #BBB}
+.article .tags.opacity {opacity: .5}
+.article .title2 .tip {position: absolute; background: rgba(0, 0, 0, .7); padding: 5px 10px; border-radius: 4px; -moz-border-radius: 4px}
+.article .title2 .tip a {color: #FFF; border-bottom: 1px dotted transparent}
+.article .title2 .tip a:hover {border-color: #FFF}
+.article .title2 .tip a:after {content: ", "}
+.article .title2 .tip a:last-child:after {content: none}
+.comments {margin: 10px 0}
+.comments .post .title2 {font-size: 11px}
+.comments .post .right {padding-left: 1%}
+.comments .post .center .left {min-width: 0}
+.comments .nick {font-size: 13px; word-wrap: break-word; overflow: hidden; width: 110px}
+.comments .avatar *, .comments .avatar img {max-width: 70px}
+.comments .u_status {top: 0; right: 0}
+.title2.bottom .when span:first-child, .title2.bottom .d_year {display: none}
+#blog:not([class*=" t"]) .title2.bottom .left > a:before {content: "\f08d"; font-family: fontawesome; margin-right: 3px}
+.title2.bottom .who a:before {content: "\f007"; font-family: fontawesome; margin-right: 3px; margin-left: 5px}
+.title2.bottom .when:before {content: "\f073"; font-family: fontawesome; margin-right: 2px; margin-left: 5px}
+.title2.bottom .left a:hover {opacity: .6}
+.article .more {text-align: center}
+.article .more a {background: #EEE; padding: 4px; border-radius: 5px; -moz-border-radius: 5px; color: #535353}
+.article .more a:hover {opacity: .6}
+.article .more a:before {content: "\f107"; font-family: fontawesome; margin-right: 4px}
+
+/* BLOG WIDGET */
+#blog .sidebar {padding-top: 20px}
+.sidebox {margin: 0 0 20px 0 !important; padding: 10px; background: #F6F6F6; box-shadow: 0 4px 11px rgba(0, 0, 0, 0.09); -moz-box-shadow: 0 4px 11px rgba(0, 0, 0, 0.09); -webkit-box-shadow: 0 4px 11px rgba(0, 0, 0, 0.09); border-radius: 2px; -moz-border-radius: 2px}
+.sidebox .avatar {border-radius: 100%; -moz-border-radius: 100%; overflow: hidden; background: #EEEEEE; height: 120px; width: 120px; border: 3px solid #E5E5E5}
+.sidebox .avatar img {min-width: 120px; min-height: 120px}
+.stitle a {color: #535353; border-bottom: 1px dotted transparent}
+.stitle a:hover {color: #535353; border-color: #535353}
+.sidebox li {padding: 2px 0}
+.side_calendar {padding: 5px}
+.side_calendar .stitle {padding-bottom: 5px}
+.side_calendar tr {text-align: center; background: #535353; color: #FFF}
+.side_calendar td {font-size: 9px; background: #DDD; color: #535353}
+.side_calendar td:nth-child(even) {background: #FFF}
+.side_calendar .current {font-weight: bold; color: #FFF; background: #535353 !important}
+.side_stats .left, .side_online .left {display: none}
+.side_stats .groups dd {margin: 2px}
+.sidebox .list {font-size: 10px}
+.side_poll {padding: 5px 1px 1px 1px}
+.side_poll .stitle {padding-bottom: 5px}
+.side_tag {padding: 5px 0 1px 1px}
+.side_tag .stitle {padding-bottom: 5px}
+
+/* TAGBOARD E CHAT */
+.tag, .chat {margin-bottom: 30px}
+.tag .list, .side_tag .list {font-size: 10px; padding: 0; font-size: 10pt}
+.tag .textinput, .side_tag .textinput {font-size: .95em; padding: 1px}
+
+/* LISTA UTENTI ONLINE */
+.online .yy a {font-weight: bold}
+.members .thumbs a, .online .thumbs a, .group .thumbs a {padding: 5px; width: 50px; height: 50px}
+.members .thumbs a *, .online .thumbs a img, .group .thumbs a * {width: 50px; height: 50px; min-height: auto; border-radius: 100%; -moz-border-radius: 100%; background: #FFF; border: 2px solid #FFF; transition: all .5s; transform: scale(0.8); -ms-transform: scale(0.8); -webkit-transform: scale(0.8); object-fit: cover}
+.members li:hover .thumbs a *, .online li:hover .thumbs a *, .group li:hover .thumbs a * {transform: scale(1); -ms-transform: scale(1); -webkit-transform: scale(1)}
+
+.members li:hover .thumbs a *, .online li:hover .thumbs a *, .group li:hover .thumbs a * {transform: scale(1); -ms-transform: scale(1); -webkit-transform: scale(1)}
+.online .bb .nick {color: #333 !important}
+.online .bb .nick div {color: #676767}
+.online .yy * {text-align: left}
+
+/* STATISTICHE */
+#board .stats {margin-top: 20px; box-shadow: 0 0 5px rgba(0, 0, 0, .1); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .1); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .1); color: #767676}
+#board .stats .list li {background: #FFF}
+#board .stats .skin_tbl.top {border: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; border-radius: 3px 3px 0 0; -moz-border-radius: 3px 3px 0 0; margin-bottom: 0}
+#board .stats .skin_tbl.bottom {box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; border-color: #7B7B7B; color: #8F8F8F; border-radius: 0 0 2px 2px; -moz-border-radius: 0 0 2px 2px}
+#board .stats .aa {display: none}
+#board .stats .mback {background: #F5F5F5; border-bottom: 3px solid #F0F0F0}
+#board .stats .mtitle {color: #7B7B7B; text-align: center}
+#board .stats .bottom .mback {border-radius: 0; -moz-border-radius: 0}
+#board .stats .top .mback {border-radius: 2px 2px 0 0; -moz-border-radius: 2px 2px 0 0}
+.groups dd a span {background: #E9E9E9; padding: 2px 4px; color: #535353; font-weight: normal}
+.groups dd {margin: 5px 5px 0 0}
+.groups dd a:hover {opacity:.6}
+.groups dd:before, .groups dd:after {content:' '}
+.users li:before {content:' - '; color: #535353; font-weight: bold}
+.users li:first-child:before {content: none}
+#board .stats .zz {width: 99%}
+#board .stats .bottom .zz > div:first-child br {display: none}
+#board .stats .bottom .zz {width: 100%; box-sizing: border-box}
+#board .stats .bottom .zz > div:first-child {font-size: 0; color: transparent; text-align: center}
+#board .stats .bottom .zz > div:first-child > * > * {font-size: 10pt; color: #7B7B7B}
+#board .stats .bottom .zz > div:first-child > * {display: inline-block; margin: 2px; background: rgba(0, 0, 0, .05); border-radius: 4px; -moz-border-radius: 4px; padding: 10px 0; width: 11.9%; text-align: center}
+@media screen and (min-width: 800px) {#board .stats .bottom .zz > div:first-child > * {width: 13.7%}}
+#board .stats .bottom .zz > div:first-child > span:first-child {border: none}
+#board .stats #top a > b, #board .stats .bottom .lastreg dd span, .stats .bottom .usersrecord span:nth-child(3), #board .stats .bottom .zz > div:first-child > * > b, #board .stats .bottom .lastreg a {display: block !important}
+#board .stats .bottom .usersrecord span, #board .stats .bottom .lastreg dt, #board .stats #monthly_visits > span:first-child, #board .stats #top > span:first-child {display: none}
+#board .stats .bottom .usersrecord span:nth-child(3) {display: block !important}
+#board .stats .lastreg a {max-width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0 auto}
+.stats .users a:before, .stats .groups a > span:before, .side_stats .users a:before, .side_stats .groups a > span:before, .online .big_list .nick > a:before, .members .big_list .bb > div:before {font-family: fontawesome; font-weight: normal; margin-right: 2px}
+.stats .gruppo1:before, .side_stats .gruppo1:before, .online .gruppo1:before, .members .gruppo1:before {content: "\f0ad"}
+.stats .gruppo2:before, .side_stats .gruppo2:before, .online .gruppo2:before, .members .gruppo2:before {content: "\f132"}
+.stats .gruppo3:before, .side_stats .gruppo3:before, .online .gruppo3:before, .members .gruppo3:before {content: "\f086"}
+
+.stats a[href*="?act=Profile&MID=461121"]:before, .online .nick a[href*="?act=Profile&MID=461121"]:before {content: "\f2cc"}
+.box_m461121 .bottomborder {width: 75%; border-bottom: 2px dashed #A9C7AF}
+
+.stats a[href*="?act=Profile&MID=1297693"]:before, .online .nick a[href*="?act=Profile&MID=1297693"]:before {content: "\f259"}
+
+
+.stats a[href*="?act=Profile&MID=11553929"]:before {content: "\f0ee"}
+
+/* COLORI UTENTI */
+.box_visitatore .details {border: 0; background: transparent}
+.utente {color: #595959; font-weight: normal !important}
+.male {color: #5AD} .female {color: #E57}
+.daconvalidare {font-style: italic; color: #757575; font-weight: normal !important}
+.amministratore, .gruppo1 {color: #58A72E; font-weight: bold}
+.groups dd a .amministratore, .groups dd a .gruppo1 {background: #58A72E; color: #FFF}
+body:not(.admin) .box_amministratore .details .avatar, body:not(.admin) .box_gruppo1:not(.box_m1823168) .details .avatar {border-color: #58A72E}
+body:not(.admin) .box_amministratore .u_status, body:not(.admin) .box_gruppo1 .u_status {display: none}
+.moderatore, .gruppo2 {color: #4178C9; font-weight: bold}
+.groups dd a .moderatore, .groups dd a .gruppo2 {background: #4178C9; color: #FFF}
+.box_moderatore .details .avatar, .box_gruppo2 .details .avatar {border-color: #4178C9}
+body:not(.admin) .box_moderatore .u_status, body:not(.admin) .box_gruppo2 .u_status {display: none}
+/*TESTER
+.gruppo4 {color: #8268AF; font-weight: bold}
+.groups dd a .gruppo4 {background: #8268AF; color: #FFF}
+body:not(.admin) .box_gruppo4 .u_status {display: none} */
+/*SKINNER*/
+.gruppo5 {color: #3ABA83}
+.groups dd a .gruppo5 {background: #3ABA83; color: #FFF}
+body:not(.admin) .box_gruppo5 .u_status {display: none}
+.gruppo6 {color: #3ABA83}
+.groups dd a .gruppo6 {background: #3ABA83; color: #FFF}
+body:not(.admin) .box_gruppo6 .u_status {display: none}
+.gruppo7 {color: #3ABA83}
+.groups dd a .gruppo7 {background: #3ABA83; color: #FFF}
+body:not(.admin) .box_gruppo7 .u_status {display: none}
+.box_gruppo8 .u_status {display: none}
+.gruppo13 {color: #E27F14; font-weight: normal !important}
+.groups dd a .gruppo13 {background: #E27F14; color: #FFF}
+.gruppo9, .gruppo10, .gruppo11 {font-weight: normal !important}
+
+/* Helper */
+.groups dd a .gruppo3 {background: #CF2C2C; color: #FFF}
+.gruppo3 {color: #CF2C2C; font-weight: normal !important}
+body:not(.admin) .box_gruppo3 .details .avatar {border-color: #E22D2D}
+.stats .gruppo3::before, .side_stats .gruppo3::before, .online .gruppo3::before, .members .gruppo3::before {content: "\f1cd"}
+
+/* Tester */
+.groups dd a .gruppo4 {background: #E27E28; color: #FFF}
+.gruppo4 {color: #E27E28; font-weight: normal !important}
+body:not(.admin) .box_gruppo4 .details .avatar {border-color: #E27E28}
+.stats .gruppo4::before, .side_stats .gruppo4::before, .online .gruppo4::before, .members .gruppo4::before {content: "\f0c3"}
+
+/* REGISTRAZIONE RAPIDA */
+.reg {margin-bottom: 30px; padding: 2px; border-radius: 5px; -moz-border-radius: 5px}
+.reg .skin_tbl {border: 0}
+
+/* AVVISI */
+.popup > div {background: #FBFBFB}
+.navsub .info {font-size: .8em}
+.alert, .info {border-radius: 5px; -moz-border-radius: 5px}
+.alert {padding: .5em; background: #F68B8B !important; color: #C00 !important}
+.info {padding: .5em; background: #AFD5E2 !important; color: #146AAE !important}
+.alert a, .info a {color: #FFF; border-bottom: 1px dotted transparent}
+.alert a:hover, .info a:hover {border-color: #FFF; color: #FFF}
+
+/* PROFILO */
+.profile .tabs a {padding: 0; position: relative; width: 40px; height: 40px; color: transparent; font-size: 0; font-family: fontawesome; border-radius: 100%; -moz-border-radius: 100%; transform: scale(0.8); -ms-transform: scale(0.8); -webkit-transform: scale(0.8)}
+.profile .tabs a:hover, .profile .tabs .current a {transform: scale(1); -ms-transform: scale(1); -webkit-transform: scale(1)}
+.profile .tabs a:before {content: "\f02e"; top: 12px; left: 13px; position: absolute; font-size: 18px; font-weight: normal; color: #FFF}
+.profile #t1 a:before {content: "\f129"; top: 12px; left: 17px}
+.profile #t2 a:before {content: "\f080"; top: 11px; left: 10px}
+.profile #t0 a:before {content: "\f1fc"; left: 10px}
+.profile #t3 a:before {content: "\f0e0"; top: 10px; left: 11px}
+.profile #t4 a:before {content: "\f040"; top: 11px; left: 12px}
+.profile #t5 a:before, .profile.album #t2 a:before {content: "\f03e"; top: 11px; left: 10px}
+.profile #t104 a:before {content: "\f03d"; top: 11px; left: 10px}
+.profile #tnb1 a:before {content: "\f086"; top: 10px; left: 10px}
+.profile.album #t3 a:before {content: "\f1c5"; top: 10px; left: 13px}
+
+.profile #tab0 a {white-space: nowrap}
+
+.profile .skin_tbl {background: #F9F9F9}
+.profile .tabs {text-align: right; padding-top: 10px; margin-bottom: 10px}
+.profile h2 {margin-top: 1.5%; padding: 10px; border-radius: 3px; -moz-border-radius: 3px}
+.profile .nick {line-height: 1em; margin: 5%; color: #535353; font-size: 16px; display: block; font-weight: bold; text-shadow: none}
+.profile .avatar {width: 130px; height: 130px; overflow: hidden; border-radius: 100%; -moz-border-radius: 100%; background: #EEEEEE; border: 3px solid #E5E5E5}
+.profile .u_status {right: 120px; top: 20px}
+.profile dl {font-size: 11px}
+.profile .left {position: relative}
+
+/* NUMERI PAGINA */
+.pages2 {font-size: 10px} .pages2:before, .pages2:after {content: none}
+.pages2 li {margin: 0 .2em; padding: 0}
+.pages2 li:first-child a {background: transparent; border: 0; font-size: 12px}
+.pages2 a:link, .pages2 a:visited {opacity: .6; padding: 1px 4px; background: rgba(0, 0, 0, .15); color: #333; font-weight: bold; border-radius: 2px; -moz-border-radius: 2px}
+.pages2 a:hover {opacity: .9}
+.top .pages {text-align: center; padding-bottom: 15px; margin-top: 5px}
+.bottom .pages {text-align: center; padding-top: 20px}
+.left .pages {padding: 0}
+.pages {font-size: 13px}
+.pages li {margin: 0 .2em; padding: 0; vertical-align: middle}
+.pages .current:before, .pages .current:after, .pages .lastpost:before, .pages .lastpost:after {content: none}
+.pages li a, .pages .current {padding: 4px 8px; font-size: 1.1em; color: #535353; font-weight: bold; background: #FFF; box-shadow: 0 0 3px rgba(0, 0, 0, .1); -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .1); -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .1); border-radius: 2px; -moz-border-radius: 2px}
+.pages li a:hover {background: #F8F8F8; color: #AAA}
+.pages .current {font-size: 1.2em; color: #FFF}
+.pages .jump a, .pages .lastpost a {font-size: .9em; padding-top: 4px}
+
+/* INPUT E BOTTONI */
+.codebuttons, .forminput, .textinput {padding: 3px; font: .9em verdana, arial, serif; color: #545454; background: #E4E4E4; border: none; border-radius: 3px; -moz-border-radius: 3px}
+[rows].textinput {padding: 4px; font-size: 1em}
+.codebuttons {padding: 2px}
+.codebuttons:hover {background: #EBEBEB}
+.navsub form {font-size: .8em}
+.navsub .forminput {color: #535353; padding: 4px; background: #FFF; border: none; box-shadow: 0 0 5px rgba(0, 0, 0, .1); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .1); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .1)}
+.navsub .forminput:hover {background: #F9F9F9 !important}
+.navsub .forminput[type="submit"] {background: #646464; color: #FFF; font-weight: bold}
+.navsub .forminput:hover {background: #E5E5E5}
+.title .forminput {padding: 2px; color: #535353; background: #E7E7E7; border: none}
+.title .forminput:hover {background: #EEE}
+.title input.forminput {font-weight: bold; color: #FFF; background: #646464; border: none}
+.darkbar .forminput, .fast.send .forminput {color: #FFF; background: #6B6B6B; transition: all .2s}
+.darkbar .forminput:hover, .fast.send .forminput:hover {background: #70C6EC}
+.darkbar .forminput {padding: 5px; font-size: 12px}
+.darkbar input.forminput, .fast.send input.forminput {background: #6B6B6B; color: #FFF; font-weight: bold}
+.darkbar button.forminput {font-weight: normal; background: #898989}
+.darkbar button.forminput:hover {background: #7ECCEF}
+.buttons {padding: 20px 0} .sidebar .buttons {padding: 10px 0 0 0; margin-bottom: 5px}
+.buttons a {border: 0; margin-left: 12px}
+.buttons a:first-child {margin: 0}
+.buttons span {padding: 5px 9px 2px 9px; font-size: 18px; color: #FFF; font-weight: bold; box-shadow: 0 0 5px rgba(0, 0, 0, .2); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .2); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .2); border-bottom: 3px solid transparent; transition: all .5s; border-radius: 2px; -moz-border-radius: 2px}
+.buttons span:hover {border-bottom: 3px solid rgba(0, 0, 0, .1)}
+.buttons .closed {background-color: #474747 !important}
+.buttons .closed:hover {border-bottom: 3px solid #C42F2F}
+.mini_buttons a {border: 0; font-weight: bold; font-size: 10px; background: rgba(0, 0, 0, .05); padding: 2px 5px; border-radius: 4px; -moz-border-radius: 4px; transition: all .5s; color: #696969}
+.mini_buttons a .fa {transition: all .5s}
+.mini_buttons a:hover {opacity: .5; color: #696969}
+.post .mini_buttons a {line-height: 1em; font-size: 11px}
+.mini_buttons > * {margin-left: 10px}
+.post .mini_buttons > * {margin-left: 12px}
+.post .bottom .mini_buttons > * {margin-left: 14px}
+.mini_buttons > *:first-child {margin: 0 !important}
+.title2 label {font-weight: bold}
+
+@font-face {font-family: 'Roboto'; font-style: normal; font-weight: 100; src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v14/vzIUHo9z-oJ4WgkpPOtg1_esZW2xOQ-xsNqO47m55DA.woff) format('woff')} @font-face {font-family: 'Roboto'; font-style: normal; font-weight: 300; src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v14/Hgo13k-tfSpn0qi1SFdUfT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff')} @font-face {font-family: 'Roboto'; font-style: normal; font-weight: 400; src: local('Roboto Regular'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v14/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff')} @font-face {font-family: 'Roboto'; font-style: normal; font-weight: 500; src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v14/RxZJdnzeo3R5zSexge8UUT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff')} @font-face {font-family: 'Roboto'; font-style: normal; font-weight: 700; src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v14/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff')} @font-face {font-family: 'Roboto'; font-style: normal; font-weight: 900; src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v14/mnpfi9pxYH-Go5UiibESIj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff')} @font-face {font-family: 'Roboto'; font-style: italic; font-weight: 100; src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(https://fonts.gstatic.com/s/roboto/v14/12mE4jfMSBTmg-81EiS-YRsxEYwM7FgeyaSgU71cLG0.woff) format('woff')} @font-face {font-family: 'Roboto'; font-style: italic; font-weight: 300; src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v14/7m8l7TlFO-S3VkhHuR0at4bN6UDyHWBl620a-IRfuBk.woff) format('woff')} @font-face {font-family: 'Roboto'; font-style: italic; font-weight: 400; src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v14/1pO9eUAp8pSF8VnRTP3xnvesZW2xOQ-xsNqO47m55DA.woff) format('woff')} @font-face {font-family: 'Roboto'; font-style: italic; font-weight: 500; src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://fonts.gstatic.com/s/roboto/v14/OLffGBTaF0XFOW1gnuHF0YbN6UDyHWBl620a-IRfuBk.woff) format('woff')} @font-face {font-family: 'Roboto'; font-style: italic; font-weight: 700; src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v14/t6Nd4cfPRhZP44Q5QAjcC4bN6UDyHWBl620a-IRfuBk.woff) format('woff')} @font-face {font-family: 'Roboto'; font-style: italic; font-weight: 900; src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v14/bmC0pGMXrhphrZJmniIZpYbN6UDyHWBl620a-IRfuBk.woff) format('woff')}
+
+/* SIDEBAR */
+.nb_sidebar {position: fixed; width: 280px; height: 100%; top: 0; z-index: 9; text-align: left; background: #FFFFFF; color: #000000}
+
+.custom_widget > *:not(#nbs_leftbutton):not(#nbs_rightbutton) {opacity: 0}
+.custom_widget {margin: 10px; height: 100%; overflow: hidden}
+#nbs_leftbutton, #nbs_rightbutton, body.openleft #nbs_leftbutton, #nbs_leftbutton:hover, body.openright #nbs_rightbutton, #nbs_rightbutton:hover, body.openleft .me_left .custom_widget > *:not(#nbs_leftbutton), body.openright .me_right .custom_widget > *:not(#nbs_rightbutton) {opacity: 1 !important}
+body.openright .nb_sidebar.me_right {box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)}
+body.openright .nb_sidebar.me_right {right: 0}
+body.openleft .nb_sidebar.me_left {left: 0}
+
+#nbs_rightbutton, #nbs_leftbutton {position: absolute; padding: 3px; top: 90px; display: block; border-radius: 100%; -moz-border-radius: 100%; height: 70px; width: 70px; transition: all .5s; z-index: 9; font-size: 18px; color: #535353; text-transform: uppercase; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); background: #FFF; border: 0}
+#nbs_rightbutton:focus, #nbs_leftbutton:focus {outline: 0}
+#nbs_rightbutton {right: 335px}
+#nbs_leftbutton {left: 335px}
+.nbs_textclose {text-align: center}
+.nbs_textclose a {cursor: pointer}
+
+.nb_sidebar.me_right {right: -280px}
+.nb_sidebar.me_left {left: -280px}
+
+.nb_sidebar, .container, .custom_widget > *:not(#nbs_leftbutton):not(#nbs_rightbutton), body.openright .nb_sidebar.me_right, body.openleft .nb_sidebar.me_left {transition: all .2s linear}
+
+.custom_widget a {color:gray; letter-spacing:.1em}
+.custom_widget .topic > a {max-width: 185px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block}
+.custom_widget .topic > * > a {max-width: 100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; vertical-align: bottom}
+.custom_widget .side_top {text-align: center}
+.custom_widget .side_top img {width: 25px; margin-right: 10px}
+.custom_widget .side_top span {font-weight: bold; font-size: 10pt}
+.custom_widget a:hover {opacity: .5; color: gray}
+.custom_widget .custom_widget {padding: 0 5px; opacity: 1 !important; height: 100%; overflow: auto; margin-right: -16px}
+.custom_widget a {transition: none !important}
+.custom_widget a:hover {opacity: 1 !important}
+.createsite {text-align: center; margin-top: 15px; margin-bottom: 15px}
+.createsite a {padding: 3px 6px; font-size: 10pt; border-radius: 4px; -moz-border-radius: 4px; border: 0; color: #F6FFF2}
+.createsite:hover a {color: #FFF; opacity: .6 !important}
+.custom_widget .side_topics .topic {border-radius: 4px; -moz-border-radius: 4px}
+.custom_widget .side_topics {border-radius: 5px; -moz-border-radius: 5px}
+.custom_widget .side_topics .topic:nth-child(even) {background: #EBEBEB}
+.custom_widget .side_topics .topic {width: 95%}
+.custom_widget .side_topics .topic:hover *, .custom_widget .side_topics .topic.new * {color: #FFF}
+.side_topics > p {display: none}
+.side_topics .topic {margin: 5px}
+.custom_widget .side_topics .thumbs a {margin-top: 11px}
+.custom_widget .more_link a {transition: all .2s ease; cursor: pointer; border: none; border-radius: 3px; -moz-border-radius: 3px; padding: 3px; margin: 2px; font-size: 9pt; box-shadow: 0 0 5px rgba(0, 0, 0, .1); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .1); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .1)}
+.custom_widget .more_link a b {font-family: verdana; position: relative; top: -0.29em; font-weight: normal}
+.custom_widget .more_link {text-align: center; margin-top: 8px; margin-bottom: 3px}
+.sidebar_title {text-align: center; font-size: 14px; margin-top: 10px; margin-bottom: 3px; color: #535353}
+.sidebar_body {margin-bottom: 3px; background: #F3F3F3; padding: 2px; border-radius: 4px; -moz-border-radius: 4px}
+.sidebar_body > ul {list-style-type: none; padding: 2px; margin: 0}
+.link_utili > li {width: 49%; display: inline-block; padding: 1% 0; border-radius: 4px; -moz-border-radius: 4px}
+.link_utili > li a {display: block}
+.link_utili > li:nth-child(even) {text-align: right}
+.link_utili > li:nth-child(even) a {margin-right: 5px} .link_utili > li:nth-child(odd) a {margin-left: 5px}
+.link_utili > li:hover > a {color: #FFF}
+.custom_widget .more_link a {color: #FFF}
+.c_f a {color: #58A72E}
+.c_f .more_link a, .c_f .topic:hover {background: #58A72E !important}
+.c_b a {color: #E67F22}
+.c_b .more_link a, .c_b .topic:hover {background: #E67F22 !important}
+.c_c a {color: #0288D1}
+.c_c .more_link a, .c_c .topic:hover {background: #0288D1 !important}
+
+/* --- INIZIO CSS BASE --- */
+ .mback {background-color: #58A72E; border-bottom: 3px solid #50972A}
+.forum .on, .board .on, .f26622 .big_list >li {box-shadow: inset 4px 0 0 #E27F14 !important; -moz-box-shadow: inset 4px 0 0 #E27F14 !important; -webkit-box-shadow: inset 4px 0 0 #E27F14 !important}
+.skin_tbl {border-bottom: 4px solid #E27F14}
+a {color: #58A72E}
+a:hover {color: rgba(92, 175, 48, 0.5)}
+.zz .who a, .mods a, .subs a {color: rgba(92, 175, 48, 0.5)}
+.zz .who a:hover, .mods a:hover, .subs a:hover {color: rgba(96, 183, 50, 0.3)}
+.board .on .aa:before {color: #E27F14}
+.header_h, .menuwrap {background-color: #58A72E}
+.forum .annuncio {background-color: rgba(96, 183, 50, 0.2); box-shadow: inset 4px 0 0 rgba(96, 183, 50, 0.25); -moz-box-shadow: inset 4px 0 0 rgba(96, 183, 50, 0.25); -webkit-box-shadow: inset 4px 0 0 rgba(96, 183, 50, 0.25)}
+.forum .importante {background-color: rgba(220, 242, 208, 0.6); box-shadow: inset 4px 0 0 rgba(208, 238, 192, 0.8); -moz-box-shadow: inset 4px 0 0 rgba(208, 238, 192, 0.8); -webkit-box-shadow: inset 4px 0 0 rgba(208, 238, 192, 0.8)}
+.buttons span {background-color: #EC8C24}
+.buttons .newpost {background-color: #58A72E}
+.title input.forminput:hover, .navsub .forminput[type='submit']:hover {background: #58A72E !important}
+.focus {background: #58A72E !important}
+#toggleright:hover, body.openright #toggleright, #toggleleft:hover, body.openleft #toggleleft {color: #58A72E}
+.createsite a {background: #58A72E}
+.link_utili > li:hover {background: #58A72E}
+.custom_widget .side_topics .topic:hover {background: #58A72E}
+.custom_widget .side_topics .topic.new:not(:hover) * {color: #E27F14 !important}
+.custom_widget .more_link a {background: #58A72E}
+.pages .current {background: #58A72E}
+.tabs a {background: #EC8C24}
+#sub_header > li, #sub_header li.active:hover {background-color: #58A72E}
+#sub_header > li:hover, #sub_header > li.active {background-color: #E27F14}
+.post {background: #F9F9F9}
+.color {font-size: 14px; color: #585858}
+body {background-image: url(https://img.forumfree.net/index_file/spacer.gif)}
+.f26622 .big_list > li:hover {background: #58A72E}
+.note {background-color: #58A72E}
+.note span {color: #58A72E}
+
+.t1787629 .post:first-child .left, .t77081924 .post .left {display: none}
+
+#t999 a:before {content: "\f21b"!important}
+
+.f2 img.s {display:none}
+#blog.f289680 form .poll .list > li * {vertical-align: middle}
+
+#f293675, #f624838 {width: 50% !important; display: inline-block; background-color: #F3F3F3; box-sizing: border-box; min-height: 80px; vertical-align: top}
+#f293675, #f624838 {box-shadow: inset 4px 4px #F9F9F9, inset -2px -4px #F9F9F9; -moz-box-shadow: inset 4px 4px #F9F9F9, inset -2px -4px #F9F9F9; -webkit-box-shadow: inset 4px 4px #F9F9F9, inset -2px -4px #F9F9F9}
+#f293675 {box-shadow: inset 4px 4px #F9F9F9, inset -2px -4px #F9F9F9; -moz-box-shadow: inset 4px 4px #F9F9F9, inset -2px -4px #F9F9F9; -webkit-box-shadow: inset 4px 4px #F9F9F9, inset -2px -4px #F9F9F9}
+#f624838 {box-shadow: inset 2px 4px #F9F9F9, inset -4px -4px #F9F9F9; -moz-box-shadow: inset 2px 4px #F9F9F9, inset -4px -4px #F9F9F9; -webkit-box-shadow: inset 2px 4px #F9F9F9, inset -4px -4px #F9F9F9}
+#f293675 .aa, #f624838 .aa {width: 13%; position: relative; top: 15px}
+#f293675 .bb, #f624838 .bb {width: 83%; position: relative; top: 5px}
+#f293675 .zz, #f624838 .zz {width: 83%; text-align: left !important; margin-left: 14%; position: relative; top: -5px}
+#f293675 .zz div, #f624838 .zz div {display: inline-block; padding: 0 3px}
+#f293675 .where a, #f624838 .where a, #f293675 .who a, #f624838 .who a {text-overflow: ellipsis; display: inline-block; white-space: nowrap; overflow: hidden; max-width: 150px !important; vertical-align: bottom}
+#f293675 .who a, #f624838 .who a {max-width: 90px !important}
+#f293675 .yy, #f624838 .yy, #f293675 .mods, #f624838 .mods, #f293675 .subs, #f624838 .subs {display: none}
+#ee676844591 .edit {font-size: 0}
+/* MENU SECONDARIO */
+.menuwrap.alternative .left > li {font-weight: bold}
+.menuwrap.alternative .left > li:nth-child(1) a {color: #BCD4E9 !important}
+.menuwrap.alternative .left > li:nth-child(2) a span {color: #A95 !important}
+.menuwrap.alternative .left > li:nth-child(3) a span {color: #AAA !important}
+.menuwrap.alternative .left > li:nth-child(4) a span {color: #C6894D !important}
+.menuwrap.alternative .left > li:not(:first-child):hover > a span {opacity: .6; text-shadow: none}
+
+/* skin complete */
+/*#c289684 .title {display: none}
+#c289684 .bb {margin-top: 15px}
+#c289684 .big_list > * {display: inline-block; width: 50%; height: 220px; text-align: center}
+#c289684 .big_list > * > div:not(.bb) {display: none} */
+
+/* galleria skin */
+#forum.f2110130 .skin_tbl, #forum.f2110130 .mainbg, #forum.f2110130 .big_list, #forum.f289602 .skin_tbl, #forum.f289602 .mainbg, #forum.f289602 .big_list {border: 0; background: none; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; border-radius: 0; -moz-border-radius: 0}
+#forum.f2110130 .mback, #forum.f2110130 .annuncio, #forum.f2110130 .title, #forum.f2110130 .big_list .aa, #forum.f2110130 .big_list .yy, #forum.f2110130 .big_list .xx, #forum.f2110130 .big_list .bb .pages2, #forum.f289602 .mback, #forum.f289602 .annuncio, #forum.f289602 .title, #forum.f289602 .big_list .aa, #forum.f289602 .big_list .yy, #forum.f289602 .big_list .bb .pages2, #forum.f289602 .big_list .new_post, #forum.f289602 .big_list .zz .who, #forum.f289602 .big_list .zz .when {display: none !important}
+#forum.f2110130 .big_list > li, #forum.f289602 .big_list > li {background-color: #F8FBFA}
+#forum.f2110130 .big_list > li:nth-child(even), #forum.f289602 .big_list > li:nth-child(even) {background-color: #F2F3F3}
+#forum.f2110130 .big_list > li.importante, #forum.f289602 .big_list > li.importante {background: #DDD; background: -moz-linear-gradient(#DDDDDD,#F0F0F0); background: -o-linear-gradient(#DDDDDD,#F0F0F0); background: -webkit-gradient(linear,left top,left bottom,from(#DDDDDD),to(#F0F0F0)); filter:progid:DXImageTransform.Microsoft.Gradient(StartColorStr=#DDDDDD,EndColorStr=#F0F0F0)}
+#forum.f2110130 .big_list > li.importante, #forum.f289602 .big_list > li.importante {background: #E2CBC0; background: -moz-linear-gradient(#E2CBC0,#F0E5E0); background: -o-linear-gradient(#E2CBC0,#F0E5E0); background: -webkit-gradient(linear,left top,left bottom,from(#E2CBC0),to(#F0E5E0)); filter:progid:DXImageTransform.Microsoft.Gradient(StartColorStr=#E2CBC0,EndColorStr=#F0E5E0)}
+#forum.f2110130 .big_list > li.importante, #forum.f289602 .big_list > li.importante {background: #EEE8AA !important; border-color: #BEB87A !important}
+#forum.f2110130 .big_list > li.importante a, #forum.f289602 .big_list > li.importante a {color: #4E481A}
+#forum.f2110130 .big_list > li:hover, #forum.f289602 .big_list > li:hover {background-color: #E0E0E0}
+#forum.f2110130 .big_list > li, #forum.f289602 .big_list > li {display: inline-block; border-radius: 15px; -moz-border-radius: 15px; width: 158px; padding: 5px 0; margin: 7px; box-shadow: 0 0 3px rgba(0, 0, 0, .2); -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .2); -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .2)}
+#forum.f2110130 .big_list .bb, #forum.f289602 .big_list .bb {background: none; width: 100%; text-align: center; padding: 0}
+#forum.f2110130 .big_list .bb h3, #forum.f289602 .big_list .bb h3 {text-overflow: ellipsis; white-space: nowrap; overflow: hidden; max-width: 150px !important; padding: 0 5px}
+#forum.f2110130 .big_list .bb .desc, #forum.f289602 .big_list .bb .desc {overflow: hidden; max-width: 148px !important; padding-left: 5px}
+#forum.f2110130 .a_desc, #forum.f289602 .a_desc {display: block; border: 0; border-radius: 0; -moz-border-radius: 0; background: transparent; height: auto; width: auto}
+#forum.f2110130 .zz, #forum.f289602 .zz {width: 100%; margin: 0 auto}
+#forum.f2110130 .big_list, #forum.f289602 .big_list {text-align: center}
+#forum.f289602 .big_list .xx {width: 100%}
+#forum.f289602 .big_list .xx a {font-weight: bold}
+#forum.f289602 .big_list .xx:before {content: "Autore: "; font-size: 8pt}
+#forum.f289602 .big_list .zz input {margin-top: -5px}
+
+
+/* Miniature sondaggi */
+.piv img:nth-child(1) {position: absolute; z-index: 8; width: 150px; -webkit-transition: width 0.5s; transition: width 0.5s; cursor: pointer}
+.piv img:nth-child(1):hover {width: 800px; z-index: 9; background: #FFF; box-shadow: 0 0 5px rgba(0, 0, 0, .5); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .5); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .5); padding: 5px}
+.piv img:nth-child(2) {width: 150px; height: 66px; margin-right: 15px}
+.piv:hover img:nth-child(2) {visibility: hidden}
+
+/* Miniature sondaggio trimestre */
+.psiv img:nth-child(1) {position: absolute; z-index: 8; width: 150px; -webkit-transition: width 0.5s; transition: width 0.5s; cursor: pointer}
+.psiv img:nth-child(1):hover {width: 500px; z-index: 9; background: #FFF; box-shadow: 0 0 5px rgba(0, 0, 0, .5); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .5); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .5); padding: 5px}
+.psiv img:nth-child(2) {width: 150px; height: 120px; margin-right: 15px}
+.psiv:hover img:nth-child(2) {visibility: hidden}
+.menuwrap.alternative .right {font-weight: bold}
+.golden:before {content: url('https://img.forumfree.it/home/img/skin1.png'); position: absolute; z-index: 9; margin-left: -12px; margin-top: -2px}
+.silver:before {content: url('https://img.forumfree.it/home/img/skin2.png'); position: absolute; z-index: 9; margin-left: -12px; margin-top: -2px}
+.bronze:before {content: url('https://img.forumfree.it/home/img/skin3.png'); position: absolute; z-index: 9; margin-left: -12px; margin-top: -2px}
+
+.tag_amministrazione {border: none !important}
+
+.board #f289680 .aa:before {content: "\f086"}
+.board #f293675 .aa:before, .board #f377076 .aa:before {content: "\f085"}
+.board #f624838 .aa:before {content: "\f1c0"}
+.board #f1102038 .aa:before {content: "\f1fc"}
+.board #f289602 .aa:before {content: "\f03e"}
+.board #f10180402 .aa:before {content: "\f12e"}
+.board #f10180402 .aa:before {content: "\f12e"}
+.board #f10996488 .aa:before {content: "\f091"}
+
+.info.mainbg {background: rgba(0, 0, 0, .2) !important; color: #FFF !important; padding-left: 0; padding-right: 0}
+.info.mainbg a {color: #4EC0FF}
+.info.mainbg a:hover {border-color: #4EC0FF}
+.post .u_location {display: none}
+
+#blog.f2 .navsub.top, #blog.f10180402 .article.chiusa {display:none}
+
+/* ------ END ------ */
+#t75091935 .color a > img {max-width: 30px}
+.box_m4 .details p, .box_m4 .details .u_posts, .box_m4 .details .u_reputation, .box_m4 .u_status {display: none}
+
+/* Server status */
+#server_status {user-select:none}
+#server_status .mainbg td > table {width: 100%; text-align: left; user-select: none}
+#server_status .mainbg td > table tr > th {width: 90%; padding: .5em 0}
+#server_status .mainbg td > table tr > td {text-align: center}
+#server_status .mainbg td .server th span {font-size: 1.3em; margin-left: 1em; font-weight: 500}
+#server_status .mainbg tr:not(.server) {background: #F9F9F9}
+#server_status .mainbg td > table tr:not(.server) > th > span {margin-left: 3em; font-size: .9em; font-weight: 500}
+#server_status .mainbg td > table > tr > th {padding: 2em 0}
+
+#server_status .mainbg .server-online {color: green}
+#server_status .mainbg .server-warning {color: orange}
+#server_status .mainbg .server-offline, #server_status .mainbg .server-critical {color: red}
+
+#server_status .online.mback {background-color: #58A72E;
+ border-bottom: 3px solid #50972A}
+#server_status .offline.mback, #server_status .danger.mback {background-color: #E22D2D;
+ border-bottom: 3px solid #DC1E1E}
+#server_status .warning.mback {background-color: #E67F22;
+ border-bottom: 3px solid #DB7519}
+
+ #server_status .mtitle:before {content: '\f233'; font-family: 'fontawesome'; margin-right: .6em}
+
+ #msg #server_status, #user #server_status, #search #server_status {display:none}
+/* status end */
+
+@media screen and (max-width:960px){
+	.container, .tabs.top, .tabs.bottom {max-width: 100%; width: auto}
+	.forum .aa {width: 6%} .forum .bb {width: 44%} .forum .xx {display: none} .forum .yy {width: 20%} .forum .zz {width: 22%}
+}
+@media screen and (max-width:768px){
+	.menuwrap .right form, .board .title, .forum .title, .board .yy, .forum .yy, .stats .aa, .post .top .when span, .post .details p, .post .details dl:not(.u_status), .post .signature, .sidebar {display: none} #centerdiv {margin-right: 0; margin-left: 0}
+	.board .aa, .forum .aa {width: 8%} .board .bb, .forum .bb {width: 54%} .board .zz, .forum .zz {width: 32%}
+	.post .center .left {min-width: 0 !important; padding-right: 4px} .post .center .left * {max-width: 60px !important} .post .avatar {max-width: 60px; height: auto; border-radius: 0} .post .u_status, .post .bottomborder, .thumbs, .title .aa {display: none !important} .members .bb, .group .bb, .online .bb {padding-left: 10px !important}
+}
+@media screen and (max-width:600px){
+	.menuwrap .right, .topic .title, .post .bottom .left {display: none}
+	.post .top, .post .center, .post .bottom, .post .top > *, .post .bottom > * {display: block; max-width: none !important}
+	.board .who, .forum .who, .board .where, .board .when, .forum .when {display: inline-block !important}
+	.board .where, .board .when, .forum .when {padding-right: 2%} .forum .when * {font-weight: normal}
+	.board .aa, .forum .aa {width: 18%} .board .bb, .forum .bb {width: 78%} .board .zz, .forum .zz {width: 78%; padding-left: 21%; margin-top: -4px}
+	.group .left {width: 40%} .group .right {width: 56%} .group .aa {width: 20%} .group .bb {width: 32%} .group .cc, .group .title .zz {display: none} .group .yy {width: 15%} .group .xx {width: 25%} .group .zz {width: 98%; margin-top: -24px}
+	.navsub .left {max-width: 100%} .pages .jump {display: none} .pages li a {white-space: normal !important}
+	.footer td {display: inline-block !important; padding: 0 0 15px 0 !important}
+}
+ .menuwrap {height: auto !important; white-space: nowrap} .menuwrap > *, .menuwrap > * > * {height: auto !important} .menu {white-space: normal} .quote_top, .quote, .code_top, .code {width: auto !important; width: 95%; margin: 2pt 14pt 2pt 14pt !important; margin: 3px} .quote_top a {text-decoration: none; border: 0} .nascosta, .box_plus .mainbg {display: none} .mback_left div {display: block; visibility: hidden; height: 0}

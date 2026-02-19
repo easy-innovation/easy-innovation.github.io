@@ -1,0 +1,1 @@
+var O=(function(A){return A.NAVIGATION="navigation",A.UPLOAD_ERROR="upload-error",A.UPLOAD_SUCCESS="upload-success",A.UPLOAD_NAVIGATION="upload-navigation",A.UPLOAD_END="upload-end",A.UPLOAD_READY="upload-ready",A.UPLOAD_REMOTE="upload-remote",A.UPLOAD_REMOTE_SUGGESTED="upload-remote-suggested",A})(O||{});export{O as a};

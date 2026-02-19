@@ -1,0 +1,1 @@
+import"./chunk-KP24O5IB.js";var o=[{path:"",children:[{path:"",redirectTo:"upload",pathMatch:"full"},{path:"upload",loadComponent:()=>import("./chunk-D5CQUUL6.js").then(t=>t.UploadComponent),data:{title:"Upload"}}]}];export{o as widgetsRoutes};
